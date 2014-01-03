@@ -1,0 +1,52 @@
+<html ng-app="spiceupApp">
+    <head>
+        <title>SpiceUp</title>
+        <meta name="viewport" content="width=device-width, user-scalable=true;">
+        
+        <link rel="stylesheet" type="text/css" href="libs/lungo/lungo.css"/>
+        <link rel="stylesheet" type="text/css" href="libs/lungo/lungo.icon.css"/>
+        <link rel="stylesheet" type="text/css" href="libs/lungo/theme.lungo.css">
+        <script type="text/javascript" src="libs/quojs/quo.debug.js"></script>
+        <script type="text/javascript" src="libs/lungo/lungo.js"></script>        
+    </head>
+    <body class="app" lab-boot>
+        <section id="main" data-transition="slide">            
+            <header ng-controller="AppCtrl">
+                <nav class="left">
+                    <a data-icon="menu" lab-aside="aside1"></a>
+                </nav>
+                <nav class="right">
+                    <a href="#/dynamic">Dynamic</a>
+                    <a href="#/static">Static</a>
+                    <a href="#/deeplink/view/demo">Deeplink</a>
+                </nav>
+            </header>
+
+            <article id="main-article" class="active">
+                <h1>comidasur</h1>
+                <p>Restaurant menu app for local</p>
+            </article>
+        </section>
+                
+        <aside id="aside1">
+            <header data-title="SpiceUp"></header>
+            <article class="active list scroll">
+                <ul>
+                    <li><a href="#/dynamic"><strong>Dynamic</strong></a></li>
+                    <li><a href="#/static"><strong>Static</strong></a></li>
+                    <li><a href="#/deeplink/view/demo"><strong>Deeplink</strong></a></li>
+                </ul>
+            </article>
+        </aside>
+                
+        <lab-view></lab-view>        
+        
+        <!-- If you use build.phonegap.com DO NOT add the phonegap.js to your archive -->
+        <!-- // <script src="phonegap.js"></script> -->
+        <script type="text/javascript" src="libs/angular/angular.js"></script>
+        <script type="text/javascript" src="libs/lungo-angular-bridge/dist/lungo-angular-bridge.js"></script>
+        <!-- Our Angular app files -->
+        <script type="text/javascript" src="app/app.js"></script>
+        <script type="text/javascript" src="app/controllers/controller.js"></script>
+    </body>
+</html>
