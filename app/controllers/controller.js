@@ -24,7 +24,7 @@ spiceUpControllers.controller ('DynamicCtrl',['$scope', '$location','MenuRespond
 	function($scope, $location, MenuResponder)	{
 
 		$scope.menuData = $scope.$parent.$root['manuList']
-		$scope.message = "Hello world!";
+		//$scope.message = "Hello world!";
 
 	}]);
 
