@@ -2,7 +2,6 @@
     <head>
         <title>SpiceUp</title>
         <!-- <meta name="viewport" content="width=device-width, user-scalable=true;"> -->
-        
         <link rel="stylesheet" type="text/css" href="libs/lungo/lungo.css"/>
         <link rel="stylesheet" type="text/css" href="libs/lungo/lungo.icon.css"/>
         <link rel="stylesheet" type="text/css" href="libs/lungo/theme.lungo.css">
@@ -17,7 +16,7 @@
                 </nav>
                 <nav class="right">
                      <a href="#/homepage">Home</a>
-                    <a href="#/basemenu">Menu</a>
+                    <a href="#/categorylist">Menu</a>
                     <a href="#/static">Favorites</a>
                     <a href="#/deeplink/view/demo">Contact</a>
                 </nav>
@@ -30,27 +29,24 @@
                 <p>hello</p>
             </article>
         </section>
-                
         <aside id="aside1">
             <header data-title="SpiceUp"></header>
             <article class="active list scroll">
                 <ul>
                     <li><a href="#/homepage"><strong>Home</strong></a></li>
-                    <li><a href="#/basemenu"><strong>Menu</strong></a></li>
+                    <li><a href="#/categorylist"><strong>Menu</strong></a></li>
                     <li><a href="#/static"><strong>Favorites</strong></a></li>
                     <li><a href="#/deeplink/view/demo"><strong>Contact</strong></a></li>
                 </ul>
             </article>
         </aside>
-                
         <lab-view></lab-view>        
-        
         <!-- If you use build.phonegap.com DO NOT add the phonegap.js to your archive -->
         <!-- // <script src="phonegap.js"></script> -->
         <script type="text/javascript" language="javascript" src="libs/angular/angular.js"></script>
-        <script type="text/javascript" language="javascript" src="libs/lungo-angular-bridge/dist/lungo-angular-bridge.js"></script>
+        <script type="text/javascript" language="javascript" src="libs/lungo-angular-bridge/dist/lungo-angular-bridge.js">
+        </script>
         <script type="text/javascript" language="javascript" src="libs/angular/angular-resource.js"></script>
-
         <!-- Our Angular app files -->
         <script type="text/javascript" src="app/app.js"></script>
         <script type="text/javascript" src="app/controllers/controller.js"></script>
