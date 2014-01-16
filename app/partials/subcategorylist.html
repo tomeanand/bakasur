@@ -1,0 +1,36 @@
+<section id="subcategorylist" data-transition="slide">
+<header data-title="CATEGORY LIST" class="extended">
+	<span class="title centered">CATEGORY LIST</span>
+        <nav class="box">
+            <a href="#" data-router="section" data-label="back">
+            <span class="icon chevron-left"></span></a>
+        </nav>
+        <nav class="right">
+            <button data-view-section="splash" data-async="static/sections/splash.html" data-icon="user">
+            </button>
+        </nav>
+    </header>
+    <nav class="groupbar">
+        <a href="#/subcategorylist" data-router="article" data-label="MENU LIST" class="active"></a>
+        <a href="#layout-art2" data-router="article" data-label="YOUR ORDER" class=""></a>
+        <a href="#layout-art3" data-router="article" data-label="RESERVATION" class=""></a>
+    </nav>
+	<article id="list" class="list scroll active">
+		<ul>
+			<li class="thumb" data-ng-repeat="item in menuData">
+				<img src="http://cdn.tapquo.com/lungo/icon-144.png">
+				<div>
+					<div class="on-right text tiny"><strong>{{item.subcategory_name.toUpperCase()}} </strong></div>
+				</div>
+			</li>
+
+		</ul>
+	</article>
+	<footer>
+        <nav>
+            <a href="#layout-art1" data-router="article" data-icon="home" class="active"></a>
+            <a href="#layout-art2" data-router="article" data-icon="inbox" class=""></a>
+            <a href="#layout-art4" data-router="article" data-icon="settings" class=""></a>
+        </nav>
+    </footer>
+</section>
