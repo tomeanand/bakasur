@@ -1,37 +1,124 @@
 
-
-
 <section id="homepage" data-transition="slide" class="show">
-    <header data-title="HOME" class="extended"><span class="title centered">HOME</span>
-       <!--  <nav class="left"><a href="#" data-view-section="back"><span class="icon chevron-left"></span></a></nav> -->
+    <header data-title="RESTAURANT" class="extended"><span class="title centered">RESTAURANT</span>
         <nav class="box">
-            <!-- <a href="#" data-router="section" data-label="back"> -->
-                <!-- <span class="icon chevron-left"></span></a> -->
         </nav>
         <nav class="right">
             <button data-view-section="splash" data-async="static/sections/splash.html" data-icon="user"></button>
-          <!--   <a href="#splash" data-router="section" data-async="app/sections/splash.html" class="button" data-icon="user">
-           </a> -->
         </nav>
+
     </header>
-
     <nav class="groupbar">
-        <a href="#/categorylist" data-router="article" data-label="MENU LIST" class="active"></a>
-        <a href="#layout-art2" data-router="article" data-label="YOUR ORDER" class=""></a>
-        <a href="#layout-art3" data-router="article" data-label="RESERVATION" class=""></a>
+        <a href="#/homepage/list" data-router="article" data-label="MENU LIST" class=""></a>
+        <a href="#/homepage/myorder" data-router="article" data-label="MY ORDER" class=""></a>
+        <a href="#/homepage/form-normal" data-router="article" data-label="RESERVATION" class=""></a>
     </nav>
+      <!-- =============================category list============================= -->
+     <article id="list" class="list scroll active">
+        <ul>
+            <li class="thumb" data-ng-repeat="item in menuData">
+                <img src="http://cdn.tapquo.com/lungo/icon-144.png">
+                <div>
+                    <div class="on-right text tiny"><strong><a href="#/menus" >{{item.subcategory_name.toUpperCase()}} </a></strong></div>
+                </div>
+            </li>
+        </ul>                   
+    </article>
+    <!-- ============================= my order ============================= -->
 
+    <article id="myorder" class="list current" style="overflow: hidden;">
+    <ul style="-webkit-transition: -webkit-transform 0ms; transition: -webkit-transform 0ms; -webkit-transform-origin: 0px 0px; -webkit-transform: translate3d(0px, 0px, 0);">
+
+         <li class="selectable ">              
+            <img src="http://cdn.tapquo.com/lungo/icon-144.png">            
+             <div class="onright">Crispy Sweet Potato chips</div>    
+             <small>$7.0</small>                   
+         </li>
+         <li class="selectable ">     
+            <img src="http://cdn.tapquo.com/lungo/icon-144.png">    
+            <div class="onright">Chicken wings</div>   
+            <small>$9.0</small>               
+        </li>
+        <li class="selectable "> 
+         <img src="http://cdn.tapquo.com/lungo/icon-144.png">          
+         <div class="onright">Pasta</div>         
+             <small>$9.0</small>                  
+       </li>
+       <li class="selectable ">              
+         <img src="http://cdn.tapquo.com/lungo/icon-144.png">              
+         <div class="onright">Lemon tea</div>                                                                       
+          <small>$7.0</small>          
+        </li>
+    </ul>
+    <div class="margin-bottom">
+        <a href="#" class="button anchor margin-bottom">Clear all Order</a>
+    </div>
+
+</article>
+
+   <!-- ============================= reservation ============================= -->
+<article id="form-normal" class="scroll active">
+        <div class="form">
+            <!-- LABEL + INPUT -->
+        <!--      <input type="text" placeholder="Input text" class="large text  bold align_center"> -->
+            <fieldset>
+                <input type="text" placeholder="Your name" class="large text  bold align_center">
+            </fieldset>
+            <fieldset>
+                <input type="text" placeholder="Number of people" class="large text  bold align_center">
+            </fieldset>
+            <fieldset>                  
+                <input type="date" class="large text align_center" placeholder="Select finish" value="10/04/1980">
+            </fieldset>
+            <fieldset>                  
+                <input type="time" class="large text align_center" placeholder="Select finish" value="00:00">
+            </fieldset>
+            <!-- INPUT -->
+            <fieldset>
+                <input type="text" id="phno" class="large text  bold align_center" placeholder="Phone number">
+            </fieldset>
+            <fieldset>
+                <textarea class="large text  bold align_center" placeholder="No order"></textarea>
+            </fieldset>
+            <fieldset>
+                <input type="text" id="comment" class="large text  bold align_center" placeholder="Comment(optional)">
+            </fieldset>           
+        </div>
+        <div id="buttons" class="scrollable indented  current">
+               <a href="#" class="button anchor margin-bottom">Send Reservation</a>
+            </div>
+    </article>
+     
+   <!-- ==============================contact============================ -->
+<article id="contact" class="scroll active">
+     <div class="large text  bold align_center"><img src="assets/images/contact.jpg"> </div> 
+        <div id="buttons" class="scrollable indented  current">
+             <div class="large text  bold align_center">
+                <h3 class="large text  bold align_center">The Restaurant</h3>
+                <p>Sudhirman Street No.12 west jakarta 13904</p>
+                <p>reservation@restaurant.com</p>
+            </div>    
+               <a href="tel:+9496812275" class="button anchor margin-bottom">Call us</a>
+               <a href="mailto:javi@tapquo.com" class="button anchor margin-bottom">Email us</a>
+
+               <!-- <li data-icon="phone"><span class="icon phone"></span>
+                        <a href="tel:+34123">
+                        Phone call
+                        <small>href="tel:"</small></a></li> -->
+        </div>
+    </article>
+     
     <footer>
         <nav>
-            <a href="#layout-art1" data-router="article" data-icon="home" class=""></a>
-            <a href="#layout-art2" data-router="article" data-icon="inbox" class=""></a>
+            <a href="#homepage" data-router="article" data-icon="home" class="active"></a>
+            <a href="#/homepage/contact" data-router="article" data-icon="inbox" class=""></a>
             <a href="#layout-art4" data-router="article" data-icon="settings" class=""></a>
         </nav>
     </footer>
 
-    <article id="categorylist" class="active"></article>
-    <article id="layout-art1"></article>
-    <article id="layout-art2"></article>
+    <!-- <article id="categorylist" class="active"></article> -->
+    <article id="homepage" class="active"></article>
+    <article id="homepage/contact"></article>
     <article id="layout-art3" class=""></article>
     <article id="layout-art4" class=""></article>
 </section>
