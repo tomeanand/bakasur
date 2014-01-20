@@ -10,6 +10,8 @@ var spiceApp = angular.module('spiceupApp',
 
   spiceApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
  
+    $routeProvider.when('/superuser', {templateUrl: "app/partials/superuser.html"});
+    $routeProvider.when('/adminreservation', {templateUrl: "app/partials/adminreservation.html"});
     $routeProvider.when('/homepage/list', {templateUrl: "app/partials/homepage.html", controller: "DynamicCtrl"});
     $routeProvider.when('/deeplink/view/:msg', {templateUrl: "app/partials/deeplink.html", controller: "DeeplinkCtrl"});
     $routeProvider.when('/static', {templateUrl: "app/partials/static.html"});
@@ -19,7 +21,8 @@ var spiceApp = angular.module('spiceupApp',
     $routeProvider.when('/homepage/myorder', {templateUrl: "app/partials/homepage.html"});
     $routeProvider.when('/homepage/form-normal', {templateUrl: "app/partials/homepage.html"});
     $routeProvider.when('/homepage/contact', {templateUrl: "app/partials/homepage.html"});
-   $routeProvider.when('/menus', {templateUrl: "app/partials/menu.html"});
+    $routeProvider.when('/detail', {templateUrl: "app/partials/detail.html"});
+    $routeProvider.when('/menus', {templateUrl: "app/partials/menu.html"});
     $routeProvider.otherwise({redirectTo: '/homepage'});
     $locationProvider.html5Mode(false);
 
