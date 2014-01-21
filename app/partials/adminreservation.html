@@ -1,0 +1,126 @@
+<section id="adminreservation" data-transition="slide">
+    <header data-title="" class="extended">
+        <nav class="box">
+            <a href="#/superuser" data-router="section" data-label="BACK" class="icon chevron-left"></a>
+        </nav>
+    </header>
+      <nav class="groupbar">
+        <a href="#/adminreservation" data-router="article" data-label="Reservation" class="active"></a>
+        <a href="#/menu" data-router="article" data-label="Menu" class=""></a>
+        <a href="#/category" data-router="article" data-label="Category" class=""></a>
+        <a href="#/superuser" data-router="article" data-label="Logout" class=""></a>
+    </nav>
+      <!-- ====================================reservation edit delete=========================== --> 
+  <article id="reserveEditDel" class="scroll active">
+    <h1 class="title">Reservation List</h1>
+    <div class="DivTable">
+    <div class="Row">
+        <div class="Cell" style="background-color:#FF9900">ID</div>
+        <div class="Cell" style="background-color:#FF9900">Name</div>
+        <div class="Cell" style="background-color:#FF9900">No of People</div>
+        <div class="Cell" style="background-color:#FF9900">Date and Time</div>
+        <div class="Cell" style="background-color:#FF9900">Phone number</div>
+        <div class="Cell" style="background-color:#FF9900">Status</div>
+        <div class="Cell" style="background-color:#FF9900">View and Delete</div>
+    </div>
+    <div class="Row">
+        <div class="Cell">1</div>
+        <div class="Cell">Joe</div>
+        <div class="Cell">2</div>
+        <div class="Cell">2-1-14</div>
+        <div class="Cell">2322323</div>
+        <div class="Cell">Not processed</div>
+        <div class="Cell"><a href="#/adminreservation/reservationdetail">View Detail|Delete</a></div>
+    </div>
+    <div class="Row">
+        <div class="Cell">2</div>
+        <div class="Cell">Harry</div>
+        <div class="Cell">1</div>
+        <div class="Cell">4-1-14<</div>
+        <div class="Cell">45454544</div>
+        <div class="Cell">Not processed</div>
+        <div class="Cell"><a href="#/adminreservation/reservationdetail">View Detail|Delete</a></div>
+    </div>
+    <div class="Row">
+        <div class="Cell">3</div>
+        <div class="Cell">James</div>
+        <div class="Cell">2</div>
+        <div class="Cell">7-1-14<</div>
+        <div class="Cell">6767676</div>
+        <div class="Cell">Not processed</div>
+        <div class="Cell"><a href="#/adminreservation/reservationdetail">View Detail|Delete</a></div>
+    </div>
+    <div class="Row">
+        <div class="Cell">4</div>
+        <div class="Cell">Vicky</div>
+        <div class="Cell">2</div>
+        <div class="Cell">16-1-14<</div>
+        <div class="Cell">323232</div>
+        <div class="Cell">Not processed</div>
+        <div class="Cell"><a href="#/adminreservation/reservationdetail">View Detail|Delete</a></div>
+    </div>
+ </div></article>
+       <!-- ====================================reservation details=========================== -->
+        
+<article id="reservationdetail">
+  <div style="width:100%">
+    <div class="reserveDiv1">
+      <h1 class="reservetitle1">Reservation Detail</h1>
+    </div>
+    <div class="reserveDiv2">
+      <h1 class="reservetitle2">Search by name
+        <input class="large text  bold align_right" type="search" placeholder="Type your search..."> 
+        <a href="#" class="button tiny" >Search</a>
+      </h1>
+    </div>
+  </div>
+<div><p></p></div>
+<div class="menu_detail">
+     <div class="menu_line">
+        <div class="menu_line1">ID</div>
+        <div class="menu_line2">34</div>
+    </div>
+    <div class="menu_line">
+      <div class="menu_line1">Menu Name</div>
+        <div class="menu_line2">Vegetarian Nachos</div>
+    </div>
+    
+    <div class="menu_line">
+      <div class="menu_line1">Serve for(people)</div>
+        <div class="menu_line2">4</div>
+    </div>
+    
+    <div class="menu_line">
+      <div class="menu_line1">Price</div>
+        <div class="menu_line2">$7.5</div>
+    </div>
+    
+    <div class="menu_line">
+      <div class="menu_line1">Catogory</div>
+        <div class="menu_line2">Appetizers</div>
+    </div>
+    
+    <div style="width:100%;height:250px;">
+      <div class="menu_line1_img">Image Preview</div>
+        <div class="menu_line2_img">
+          <div style="width:200;height:240"><img src="assets/images/thumb_COLOURBOX7102662.jpg"></div> 
+        </div>
+    </div>
+    
+    <div class="menu_line">
+      <div class="menu_line1">Description</div>
+        <div class="menu_line2">Loren ipsum dolor sit amet,consectetur adipiscing elit.Cras eu sem menus.Vivamus utsapien ut tortor
+vestibulum imperdiet</div>
+    </div>
+    
+    <div style="width:100%;height:50px;">
+    <div class="btdv"><input type="button" class="btn" name="Edit" value="Edit" /></div>
+    <div class="btdv"><input type="button" class="btn" name="Delete" value="Delete" /></div>
+    </div>
+      
+</div>
+ 
+
+</article>
+</section>
+

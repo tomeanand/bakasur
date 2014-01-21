@@ -2,31 +2,43 @@
 <section id="homepage" data-transition="slide" class="show">
     <header data-title="RESTAURANT" class="extended"><span class="title centered">RESTAURANT</span>
         <nav class="box">
+              <a href="#/homepage/home" data-router="section" data-label="BACK" class="icon chevron-left"></a>
         </nav>
         <nav class="right">
             <button data-view-section="splash" data-async="static/sections/splash.html" data-icon="user"></button>
         </nav>
-
     </header>
     <nav class="groupbar">
-        <a href="#/homepage/list" data-router="article" data-label="MENU LIST" class=""></a>
+        <a href="#/catlist" data-router="article" data-label="MENU LIST" class="active"></a>
         <a href="#/homepage/myorder" data-router="article" data-label="MY ORDER" class=""></a>
         <a href="#/homepage/form-normal" data-router="article" data-label="RESERVATION" class=""></a>
     </nav>
+      <!-- =============================home============================= -->
+
+     <article id="home" class="large text align_center">
+     <div class="t1">
+        <img src="assets/images/home001.jpg"> 
+    </div>         
+    </article>
       <!-- =============================category list============================= -->
      <article id="list" class="list scroll active">
         <ul>
             <li class="thumb" data-ng-repeat="item in menuData">
-                <img src="http://cdn.tapquo.com/lungo/icon-144.png">
+               <!--  <img src="http://cdn.tapquo.com/lungo/icon-144.png"> -->
                 <div>
-                    <div class="on-right text tiny"><strong><a href="#/menus" >{{item.subcategory_name.toUpperCase()}} </a></strong></div>
+                    <div class="on-right text tiny">
+                        <strong>
+                        <a href="#/menus" >{{item.subcategory_name.toUpperCase()}} </a>
+                        </strong>
+                    </div>
                 </div>
             </li>
         </ul>                   
     </article>
+
     <!-- ============================= my order ============================= -->
 
-    <article id="myorder" class="list current" style="overflow: hidden;">
+    <article id="myorder" class="list scroll active" style="overflow: hidden;">
     <ul style="-webkit-transition: -webkit-transform 0ms; transition: -webkit-transform 0ms; -webkit-transform-origin: 0px 0px; -webkit-transform: translate3d(0px, 0px, 0);">
 
          <li class="selectable ">              
@@ -90,7 +102,7 @@
     </article>
      
    <!-- ==============================contact============================ -->
-<article id="contact" class="scroll active">
+   <article id="contact" class="scroll active">
      <div class="large text  bold align_center"><img src="assets/images/contact.jpg"> </div> 
         <div id="buttons" class="scrollable indented  current">
              <div class="large text  bold align_center">
@@ -107,7 +119,22 @@
                         <small>href="tel:"</small></a></li> -->
         </div>
     </article>
-     
+   <!-- ====================================menudetails=========================== --> 
+   <!-- <article id="detail" class="scroll active">
+     <div class="large text  bold align_center">
+      <img src="assets/images/contact.jpg"> </div> 
+        <div id="buttons" class="scrollable indented  current">
+             <div class="large text  bold align_center">
+                <h3 class="large text  bold align_center">Vegetarian nachos</h3>
+                <p>$7.5</p>
+                <p>Serve for 4 people</p>
+                <p>Lorem ipsum</p>
+            </div>    
+               <a href="#" class="button anchor margin-bottom">Add this to my order</a>
+               <a href="#" class="button anchor margin-bottom">Share this</a>
+        </div>
+    </article> -->
+    <!-- ========================================================================== -->
     <footer>
         <nav>
             <a href="#homepage" data-router="article" data-icon="home" class="active"></a>
