@@ -2,71 +2,201 @@
 <section id="homepage" data-transition="slide" class="show">
     <header data-title="RESTAURANT" class="extended"><span class="title centered">RESTAURANT</span>
         <nav class="box">
-              <a href="#/homepage/home" data-router="section" data-label="BACK" class="icon chevron-left"></a>
+              <a href="#/homepage" data-router="section" data-label="BACK" class="icon chevron-left"></a>
         </nav>
         <nav class="right">
-            <button data-view-section="splash" data-async="static/sections/splash.html" data-icon="user"></button>
+            <a href="#/homepage/login" data-router="section" class="button" data-icon="user" data-label="Splash"></a>
+            <!-- <button data-view-section="splash" data-async="homepage/login" data-icon="user"></button> -->
         </nav>
     </header>
-    <nav class="groupbar">
-        <a href="#/catlist" data-router="article" data-label="MENU LIST" class="active"></a>
-        <a href="#/homepage/myorder" data-router="article" data-label="MY ORDER" class=""></a>
-        <a href="#/homepage/form-normal" data-router="article" data-label="RESERVATION" class=""></a>
-    </nav>
-      <!-- =============================home============================= -->
+  
+    <!-- =============================login to facebook============================= -->
+    <article id="login" class="scroll active">
+        <div class="login_detail">
+            <div class="menu_linelogin" style="font-size:14px;font-weight:bold;margin-left:1;">
+                <h1 class="headings"><strong><b>ACCOUNT SETTING</b></strong></h1>
+            </div>
 
-     <article id="home" class="large text align_center">
-     <div class="t1">
-        <img src="assets/images/home001.jpg"> 
-    </div>         
+            <div class="menu_linelogin">
+            <div class="log_textbox1"><h2 class="title">Login to Facebook</h2></div>
+            <div class="log_textbox2">
+                <a href="http://www.facebook.com">
+                <img src="assets/images/next_button.png" />
+                </a>
+            </div>
+            </div>
+           
+            <div class="menu_linelogin">
+            <div class="log_textbox1"><h2 class="title">Login to Twitter</h2></div>
+            <div class="log_textbox2">
+                <a href="http://www.twitter.com"><img src="assets/images/next_button.png" /></a>
+            </div>
+            </div>
+<div style="text-align:center"><p><h1 class="headings">Or </h1></p></div>
+<div class="form">
+    <div style="text-align:left"><p><h1 style="color:#E47911" class="title">Sign In </h1></p></div>
+            
+            <fieldset>
+                <label>Your Email:</label>
+                <input type="text" placeholder="Your email">
+            </fieldset>
+           
+            <fieldset>
+                <label>Password:</label>
+                <input type="password">
+            </fieldset>
+            <fieldset>
+                <textarea></textarea>
+            </fieldset>
+            <a href="#/myplate" data-router="article" class="button anchor accept" data-label="Sign In"></a>
+        </div>
+</div>
+    </article>
+     <!-- =============================show All menus============================= -->
+     <article id="showallmenu" class="list scroll active">
+        <div class="menu_detail1">
+            <div class="menu_line22">
+                <div class="menu_line11">
+                    <div id="menu_smlimg"> <img src="assets/images/italian_food.jpg" id="menu_smlimg"/></div>
+                </div>
+                <div class="menu_line222"id="dec" ><br /><a href="#/homepage/menudetail">Chicken Wings</a></div>
+            </div>
+            <div class="menu_line22">
+                <div class="menu_line11">
+                    <div id="menu_smlimg"> <img src="assets/images/strawbwrry_sundae.jpg" id="menu_smlimg"/></div>
+                </div>
+                <div class="menu_line222" id="dec"><br /><a href="#/homepage/menudetail">Vegetarian Nachos</a></div>
+            </div>
+            <div class="menu_line22">
+                <div class="menu_line11">
+                    <div id="menu_smlimg"> <img src="assets/images/italian_sausage_sandwich.jpg" id="menu_smlimg"/></div>
+                </div>
+                <div class="menu_line222" id="dec"><br /><a href="#/homepage/menudetail">Pumpkin Quesadilla</a></div>
+            </div>
+            <div class="menu_line22">
+                <div class="menu_line11">
+                    <div id="menu_smlimg"> <img src="assets/images/shrimp_diablo.jpg" id="menu_smlimg"/></div>
+                </div>
+                <div class="menu_line222" id="dec"><br /><a href="#/homepage/menudetail">Crispy Sweet Pototo</a></div>
+            </div>
+            <div class="menu_line22">
+                <div class="menu_line11">
+                    <div id="menu_smlimg"> <img src="assets/images/italian_sausage_sandwich.jpg" id="menu_smlimg"/></div>
+                </div>
+                <div class="menu_line222" id="dec"><br /><a href="#/homepage/menudetail">Fried Crab Claws</a></div>
+            </div>
+      </div>
+    </article>
+     <!-- =============================menudetail============================= -->
+     <article id="menudetail" class="scroll active">
+     <div class="large text  bold align_center">
+      <img src="assets/images/caprese_salad.jpg"> </div> 
+        <div id="buttons" class="scrollable indented  current">
+             <div class="large text  bold align_center">
+                <h3 class="large text  bold align_center">Vegetarian nachos</h3>
+                <p>$7.5</p>
+                <p>Serve for 4 people</p>
+                <p>Lorem ipsum</p>
+            </div>    
+               <a href="#/order/myorder" class="button anchor margin-bottom">Add this to my order</a>
+               <a href="#/homepage/share" class="button anchor margin-bottom">Share this</a>
+        </div>
+    </article>
+     <!-- =============================Share============================= -->
+
+    <article id="share" class="scroll active">
+        <div class="login_detail">
+            <div class="menu_linelogin" style="font-size:14px;font-weight:bold;margin-left:1;">
+                <h1 class="headings"><strong><b>Share</b></strong></h1>
+            </div>
+            <div class="menu_linelogin">
+            <fieldset>
+                <textarea rows="2" cols="50"></textarea>
+            </fieldset>
+            </div>
+
+            <div class="menu_linelogin">
+            <div class="log_textbox1"><h2 class="title">Login to Facebook</h2></div>
+            <div class="log_textbox2">
+                <a href="http://www.facebook.com">
+                <img src="assets/images/next_button.png" />
+                </a>
+            </div>
+            </div>
+           
+            <div class="menu_linelogin">
+            <div class="log_textbox1"><h2 class="title">Login to Twitter</h2></div>
+            <div class="log_textbox2">
+                <a href="http://www.twitter.com"><img src="assets/images/next_button.png" /></a>
+            </div>
+            </div>
+    </div>
+    <div id="buttons" class="scrollable indented  current">
+               <a href="#" class="button anchor margin-bottom">Post</a>
+    </div>
     </article>
       <!-- =============================category list============================= -->
-     <article id="list" class="list scroll active">
+     <article id="menus" class="list scroll active">
         <ul>
             <li class="thumb" data-ng-repeat="item in menuData">
-               <!--  <img src="http://cdn.tapquo.com/lungo/icon-144.png"> -->
-                <div>
+                 <img src="assets/images/logo.jpg"> 
+                <div style="height:30px">
                     <div class="on-right text tiny">
                         <strong>
-                        <a href="#/menus" >{{item.subcategory_name.toUpperCase()}} </a>
+                        <a href="#/homepage/menuitems" >{{item.subcategory_name.toUpperCase()}} </a>
                         </strong>
                     </div>
                 </div>
             </li>
         </ul>                   
     </article>
+      <!-- =============================menu items by category============================= -->
 
-    <!-- ============================= my order ============================= -->
-
-    <article id="myorder" class="list scroll active" style="overflow: hidden;">
-    <ul style="-webkit-transition: -webkit-transform 0ms; transition: -webkit-transform 0ms; -webkit-transform-origin: 0px 0px; -webkit-transform: translate3d(0px, 0px, 0);">
-
-         <li class="selectable ">              
-            <img src="http://cdn.tapquo.com/lungo/icon-144.png">            
-             <div class="onright">Crispy Sweet Potato chips</div>    
-             <small>$7.0</small>                   
-         </li>
-         <li class="selectable ">     
-            <img src="http://cdn.tapquo.com/lungo/icon-144.png">    
-            <div class="onright">Chicken wings</div>   
-            <small>$9.0</small>               
-        </li>
-        <li class="selectable "> 
-         <img src="http://cdn.tapquo.com/lungo/icon-144.png">          
-         <div class="onright">Pasta</div>         
-             <small>$9.0</small>                  
-       </li>
-       <li class="selectable ">              
-         <img src="http://cdn.tapquo.com/lungo/icon-144.png">              
-         <div class="onright">Lemon tea</div>                                                                       
-          <small>$7.0</small>          
-        </li>
-    </ul>
-    <div class="margin-bottom">
-        <a href="#" class="button anchor margin-bottom">Clear all Order</a>
-    </div>
-
-</article>
+    <article id="menuitems" class="active scroll indented">
+        <div>
+            <p class="margin bottom">
+                <a id="veg" href="#/homepage/menuitems" class="button">VEG</a>
+                <a id="nonveg" href="#/homepage/menuitems" class="button">NON VEG</a>
+            </p>
+            <div class="menu_detail1">
+                <div class="menu_line22">
+                    <div class="menu_line11">
+                        <div id="menu_smlimg"> <img src="assets/images/italian_food.jpg" id="menu_smlimg"/></div>
+                    </div>
+                    <div class="menu_line222"id="dec" ><br /><a href="#/homepage/menudetail">Chicken Wings</a>
+                    </br>$7.0</div>
+                </div>
+                <div class="menu_line22">
+                    <div class="menu_line11">
+                        <div id="menu_smlimg"> <img src="assets/images/strawbwrry_sundae.jpg" id="menu_smlimg"/></div>
+                    </div>
+                    <div class="menu_line222" id="dec"><br /><a href="#/homepage/menudetail">Vegetarian Nachos</a>
+                    </br>$8.0</div>
+                </div>
+                <div class="menu_line22">
+                    <div class="menu_line11">
+                        <div id="menu_smlimg"> <img src="assets/images/italian_sausage_sandwich.jpg" id="menu_smlimg"/></div>
+                    </div>
+                    <div class="menu_line222" id="dec"><br /><a href="#/homepage/menudetail">Pumpkin Quesadilla</a>
+                    </br>$10.0</div>
+                </div>
+                <div class="menu_line22">
+                    <div class="menu_line11">
+                        <div id="menu_smlimg"> <img src="assets/images/shrimp_diablo.jpg" id="menu_smlimg"/></div>
+                    </div>
+                    <div class="menu_line222" id="dec"><br /><a href="#/homepage/menudetail">Crispy Sweet Pototo</a>
+                    </br>$9.0</div>
+                </div>
+                <div class="menu_line22">
+                    <div class="menu_line11">
+                        <div id="menu_smlimg"> <img src="assets/images/italian_sausage_sandwich.jpg" id="menu_smlimg"/></div>
+                    </div>
+                    <div class="menu_line222" id="dec"><br /><a href="#/homepage/menudetail">Fried Crab Claws</a>
+                    </br>$6.0</div>
+                </div>
+            </div>
+        </div>
+    </article>
 
    <!-- ============================= reservation ============================= -->
 <article id="form-normal" class="scroll active">
@@ -101,39 +231,13 @@
             </div>
     </article>
      
-   <!-- ==============================contact============================ -->
-   <article id="contact" class="scroll active">
-     <div class="large text  bold align_center"><img src="assets/images/contact.jpg"> </div> 
-        <div id="buttons" class="scrollable indented  current">
-             <div class="large text  bold align_center">
-                <h3 class="large text  bold align_center">The Restaurant</h3>
-                <p>Sudhirman Street No.12 west jakarta 13904</p>
-                <p>reservation@restaurant.com</p>
-            </div>    
-               <a href="tel:+9496812275" class="button anchor margin-bottom">Call us</a>
-               <a href="mailto:javi@tapquo.com" class="button anchor margin-bottom">Email us</a>
+     <section id="contacts">
+        <header data-back="home" data-title="Categorías">
+        </header>
+        <article id="directory_cats_list" class="list">
+        </article>
+    </section>
 
-               <!-- <li data-icon="phone"><span class="icon phone"></span>
-                        <a href="tel:+34123">
-                        Phone call
-                        <small>href="tel:"</small></a></li> -->
-        </div>
-    </article>
-   <!-- ====================================menudetails=========================== --> 
-   <!-- <article id="detail" class="scroll active">
-     <div class="large text  bold align_center">
-      <img src="assets/images/contact.jpg"> </div> 
-        <div id="buttons" class="scrollable indented  current">
-             <div class="large text  bold align_center">
-                <h3 class="large text  bold align_center">Vegetarian nachos</h3>
-                <p>$7.5</p>
-                <p>Serve for 4 people</p>
-                <p>Lorem ipsum</p>
-            </div>    
-               <a href="#" class="button anchor margin-bottom">Add this to my order</a>
-               <a href="#" class="button anchor margin-bottom">Share this</a>
-        </div>
-    </article> -->
     <!-- ========================================================================== -->
     <footer>
         <nav>
