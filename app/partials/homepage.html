@@ -2,40 +2,55 @@
 <section id="homepage" data-transition="slide" class="show">
     <header data-title="RESTAURANT" class="extended"><span class="title centered">RESTAURANT</span>
         <nav class="box">
-              <a href="#/homepage/" data-router="section" data-label="BACK" class="icon chevron-left"></a>
+              <a href="#/homepage" data-router="section" data-label="BACK" class="icon chevron-left"></a>
         </nav>
         <nav class="right">
             <a href="#/homepage/login" data-router="section" class="button" data-icon="user" data-label="Splash"></a>
             <!-- <button data-view-section="splash" data-async="homepage/login" data-icon="user"></button> -->
         </nav>
     </header>
-    <nav class="groupbar">
-        <a href="#/catlist" data-router="article" data-label="MENU LIST" class="active"></a>
-        <a href="#/homepage/myorder" data-router="article" data-label="MY ORDER" class=""></a>
-        <a href="#/homepage/form-normal" data-router="article" data-label="RESERVATION" class=""></a>
-    </nav>
+  
     <!-- =============================login to facebook============================= -->
-    <article id="login" class="list scroll active">
+    <article id="login" class="scroll active">
         <div class="login_detail">
-            <div class="menu_line" style="font-size:14px;font-weight:bold;margin-left:1;">ACCOUNT SETTING </div>
-            <div class="menu_line">
-            <div class="log_textbox1">Login to Facebook</div>
-            <div class="log_textbox2"><a href="http://www.facebook.com"><img src="assets/images/next_button.png" /></a></div>
+            <div class="menu_linelogin" style="font-size:14px;font-weight:bold;margin-left:1;">
+                <h1 class="headings"><strong><b>ACCOUNT SETTING</b></strong></h1>
             </div>
-            <div class="menu_line">
-            <div class="log_textbox1">Login to Twiter</div>
-            <div class="log_textbox2"><a href="http://www.facebook.com"><img src="assets/images/next_button.png" /></a>
+
+            <div class="menu_linelogin">
+            <div class="log_textbox1"><h2 class="title">Login to Facebook</h2></div>
+            <div class="log_textbox2">
+                <a href="http://www.facebook.com">
+                <img src="assets/images/next_button.png" />
+                </a>
             </div>
             </div>
+           
+            <div class="menu_linelogin">
+            <div class="log_textbox1"><h2 class="title">Login to Twitter</h2></div>
+            <div class="log_textbox2">
+                <a href="http://www.twitter.com"><img src="assets/images/next_button.png" /></a>
+            </div>
+            </div>
+<div style="text-align:center"><p><h1 class="headings">Or </h1></p></div>
+<div class="form">
+    <div style="text-align:left"><p><h1 style="color:#E47911" class="title">Sign In </h1></p></div>
+            
+            <fieldset>
+                <label>Your Email:</label>
+                <input type="text" placeholder="Your email">
+            </fieldset>
+           
+            <fieldset>
+                <label>Password:</label>
+                <input type="password">
+            </fieldset>
+            <fieldset>
+                <textarea></textarea>
+            </fieldset>
+            <a href="#/myplate" data-router="article" class="button anchor accept" data-label="Sign In"></a>
         </div>
-        <!-- <img src="http://lungo.tapquo.com/resources/logo_splash.png"> -->
-     <!--    <form class="rounded">
-            <input placeholder="Your username" id="txt-signup-name" value="" type="text">
-            <input placeholder="Your password" id="txt-signup-password" value="" type="password">
-            <a href="#" class="button theme anchor" data-icon="checkmark"><span class="icon checkmark"></span>Login</a>
-            <a href="#back" data-router="section" class="button accept anchor" data-icon="left"><span class="icon left">
-            </span>Return to SpiceUp</a>
-        </form> -->
+</div>
     </article>
      <!-- =============================show All menus============================= -->
      <article id="showallmenu" class="list scroll active">
@@ -83,9 +98,42 @@
                 <p>Serve for 4 people</p>
                 <p>Lorem ipsum</p>
             </div>    
-               <a href="#/homepage/myorder" class="button anchor margin-bottom">Add this to my order</a>
-               <a href="#" class="button anchor margin-bottom">Share this</a>
+               <a href="#/order/myorder" class="button anchor margin-bottom">Add this to my order</a>
+               <a href="#/homepage/share" class="button anchor margin-bottom">Share this</a>
         </div>
+    </article>
+     <!-- =============================Share============================= -->
+
+    <article id="share" class="scroll active">
+        <div class="login_detail">
+            <div class="menu_linelogin" style="font-size:14px;font-weight:bold;margin-left:1;">
+                <h1 class="headings"><strong><b>Share</b></strong></h1>
+            </div>
+            <div class="menu_linelogin">
+            <fieldset>
+                <textarea rows="2" cols="50"></textarea>
+            </fieldset>
+            </div>
+
+            <div class="menu_linelogin">
+            <div class="log_textbox1"><h2 class="title">Login to Facebook</h2></div>
+            <div class="log_textbox2">
+                <a href="http://www.facebook.com">
+                <img src="assets/images/next_button.png" />
+                </a>
+            </div>
+            </div>
+           
+            <div class="menu_linelogin">
+            <div class="log_textbox1"><h2 class="title">Login to Twitter</h2></div>
+            <div class="log_textbox2">
+                <a href="http://www.twitter.com"><img src="assets/images/next_button.png" /></a>
+            </div>
+            </div>
+    </div>
+    <div id="buttons" class="scrollable indented  current">
+               <a href="#" class="button anchor margin-bottom">Post</a>
+    </div>
     </article>
       <!-- =============================category list============================= -->
      <article id="menus" class="list scroll active">
@@ -150,45 +198,6 @@
         </div>
     </article>
 
-    <!-- ============================= my order ============================= -->
-
-    <article id="myorder" class="list scroll active" style="overflow: hidden;">
-       <div class="menu_details">
-    <div class="menu_line">
-    <div class="menu_order_1" style="background-color:#FF6633">Total order:(Tax 10.0%)</div>
-        <div class="menu_order_2" style="background-color:#FF6633"></div>
-        <div class="menu_order_3" style="background-color:#FF6633">$33.0</div>
-    </div>
-    <div class="menu_line" style="background-color:#CCCC99;font-size:14px;font-weight:bold"><h1 class="title"> Detail</h1></div>
-    <div class="menu_line">
-        <div class="menu_order_1">Crispy Sweet Poroto</div>
-        <div class="menu_order_2">1</div>
-        <div class="menu_order_3">$7.0</div>
-    </div>
-    <div class="menu_line">
-        <div class="menu_order_1">Chicken Wings</div>
-        <div class="menu_order_2">1</div>
-        <div class="menu_order_3">$7.0</div>
-    </div>
-    <div class="menu_line">
-        <div class="menu_order_1">Pasta with Olives and Parsley</div>
-        <div class="menu_order_2">1</div>
-        <div class="menu_order_3">$8.0</div>
-    </div>
-    <div class="menu_line">
-        <div class="menu_order_1">Lemon Tea</div>
-        <div class="menu_order_2">2</div>
-        <div class="menu_order_3">$7.0</div>
-    </div>
-
-</div>
-        
-    <div id="buttons" class="scrollable indented  current">
-        <a href="#/homepage/menuitems" class="button anchor margin-bottom">Buy Order</a></br>
-        <a href="#/homepage/myorder" class="button anchor margin-bottom">Clear all Order</a>
-    </div>
-</article>
-
    <!-- ============================= reservation ============================= -->
 <article id="form-normal" class="scroll active">
         <div class="form">
@@ -222,20 +231,13 @@
             </div>
     </article>
      
-   <!-- ==============================contact============================ -->
-   <article id="contact" class="scroll active">
-     <div class="large text  bold align_center"><img src="assets/images/contact.jpg"> </div> 
-        <div id="buttons" class="scrollable indented  current">
-             <div class="large text  bold align_center">
-                <h3 class="large text  bold align_center">The Restaurant</h3>
-                <p>Sudhirman Street No.12 west jakarta 13904</p>
-                <p>reservation@restaurant.com</p>
-            </div>    
-               <a href="tel:+9496812275" class="button anchor margin-bottom">Call us</a>
-               <a href="mailto:javi@tapquo.com" class="button anchor margin-bottom">Email us</a>
-        </div>
-    </article>
-  
+     <section id="contacts">
+        <header data-back="home" data-title="Categorías">
+        </header>
+        <article id="directory_cats_list" class="list">
+        </article>
+    </section>
+
     <!-- ========================================================================== -->
     <footer>
         <nav>
