@@ -5,11 +5,10 @@
 var spiceApp = angular.module('spiceupApp', 
 	['Centralway.lungo-angular-bridge'
 	,'spiceUpControllers'
-	,'spiceUpServices']
-	);
-
-  spiceApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
- 
+	,'spiceUpServices'
+    ,'showMenuServices'
+    ,'cat']);
+  spiceApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) { 
     $routeProvider.when('/superuser', {templateUrl: "app/partials/superuser.html"});
     $routeProvider.when('/adminreservation', {templateUrl: "app/partials/adminreservation.html"});
     $routeProvider.when('/adminreservation/reservationdetail', {templateUrl: "app/partials/adminreservation.html"});
@@ -18,9 +17,9 @@ var spiceApp = angular.module('spiceupApp',
     $routeProvider.when('/contactus/map', {templateUrl: "app/partials/contact.html"});
     /*================================================all items==================================================*/
 
-    $routeProvider.when('/homepage/showallmenu', {templateUrl: "app/partials/homepage.html"});
+    $routeProvider.when('/homepage/showallmenu', {templateUrl: "app/partials/homepage.html", controller: "menuCtrl"});
     $routeProvider.when('/homepage/menus', {templateUrl: "app/partials/homepage.html", controller: "DynamicCtrl"});
-    $routeProvider.when('/homepage/menuitems', {templateUrl: "app/partials/homepage.html"});
+    $routeProvider.when('/homepage/menuitems', {templateUrl: "app/partials/homepage.html" ,controller: "menuCtrl"});
     $routeProvider.when('/deeplink/view/:msg', {templateUrl: "app/partials/deeplink.html", controller: "DeeplinkCtrl"});
     $routeProvider.when('/static', {templateUrl: "app/partials/static.html"});
     $routeProvider.when("/static/info", {});

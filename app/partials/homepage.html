@@ -9,6 +9,10 @@
             <!-- <button data-view-section="splash" data-async="homepage/login" data-icon="user"></button> -->
         </nav>
     </header>
+    <nav class="groupbar">
+        <a href="#/order/myorder" data-router="article" data-label="" class=""></a>
+        <a href="#/myplate/editplate" data-router="article" data-label="" class="active"></a>
+    </nav>
   
     <!-- =============================login to facebook============================= -->
     <article id="login" class="scroll active">
@@ -32,10 +36,9 @@
                 <a href="http://www.twitter.com"><img src="assets/images/next_button.png" /></a>
             </div>
             </div>
-<div style="text-align:center"><p><h1 class="headings">Or </h1></p></div>
-<div class="form">
-    <div style="text-align:left"><p><h1 style="color:#E47911" class="title">Sign In </h1></p></div>
-            
+        <div style="text-align:center"><p><h1 class="headings">Or </h1></p></div>
+        <div class="form">
+            <div style="text-align:left"><p><h1 style="color:#E47911" class="title">Sign In </h1></p></div>
             <fieldset>
                 <label>Your Email:</label>
                 <input type="text" placeholder="Your email">
@@ -50,11 +53,23 @@
             </fieldset>
             <a href="#/myplate" data-router="article" class="button anchor accept" data-label="Sign In"></a>
         </div>
-</div>
+    </div>
     </article>
      <!-- =============================show All menus============================= -->
      <article id="showallmenu" class="list scroll active">
-        <div class="menu_detail1">
+          <ul>
+            <li class="thumb" data-ng-repeat="item in Showmenu">
+                 <img src="assets/images/logo.jpg"> 
+                <div style="height:30px">
+                    <div class="on-right text tiny">
+                        <strong>
+                        <a href="#/homepage/menuitems" >{{item.menu_name.toUpperCase()}} </a>
+                        </strong>
+                    </div>
+                </div>
+            </li>
+        </ul>        
+       <!--  <div class="menu_detail1">
             <div class="menu_line22">
                 <div class="menu_line11">
                     <div id="menu_smlimg"> <img src="assets/images/italian_food.jpg" id="menu_smlimg"/></div>
@@ -85,7 +100,7 @@
                 </div>
                 <div class="menu_line222" id="dec"><br /><a href="#/homepage/menudetail">Fried Crab Claws</a></div>
             </div>
-      </div>
+      </div> -->
     </article>
      <!-- =============================menudetail============================= -->
      <article id="menudetail" class="scroll active">
@@ -152,50 +167,41 @@
     </article>
       <!-- =============================menu items by category============================= -->
 
-    <article id="menuitems" class="active scroll indented">
-        <div>
-            <p class="margin bottom">
+    <article id="menuitems" class="list scroll active">
+        <div>Search: <input ng-model="query" ></div>
+        
+<div style="height:40px"> 
+    <ul class="thumb">
+        <li  ng-repeat="cat in ShowmenuByCat | filter:query:menu_category" class="thumbnail phone-listing">
+<!--                         <li ng-repeat='person in people | filter:searchText'>#{{person.id}} {{person.name}}</li>
+ -->       <!--   <p>{{ShowmenuByCat}}</p> -->
+   <img  src="assets/images/logo.jpg">
+          <p>{{cat.menu_name}}</p>
+        </li>
+    </ul>
+  </div>
+
+
+    <!-- <div>
+       
+        <p class="margin bottom">
                 <a id="veg" href="#/homepage/menuitems" class="button">VEG</a>
                 <a id="nonveg" href="#/homepage/menuitems" class="button">NON VEG</a>
-            </p>
-            <div class="menu_detail1">
-                <div class="menu_line22">
-                    <div class="menu_line11">
-                        <div id="menu_smlimg"> <img src="assets/images/italian_food.jpg" id="menu_smlimg"/></div>
+        </p>
+    </div>
+        <ul>
+            <li class="thumb" data-ng-repeat="item in Showmenu">
+                 <img src="assets/images/logo.jpg"> 
+                <div style="height:30px">
+                    <div class="on-right text tiny">
+                        <a href="#/homepage/menudetail" ><strong>{{item.menu_name.toUpperCase()}}</strong></a>
+                         ${{item.menu_price}}
                     </div>
-                    <div class="menu_line222"id="dec" ><br /><a href="#/homepage/menudetail">Chicken Wings</a>
-                    </br>$7.0</div>
                 </div>
-                <div class="menu_line22">
-                    <div class="menu_line11">
-                        <div id="menu_smlimg"> <img src="assets/images/strawbwrry_sundae.jpg" id="menu_smlimg"/></div>
-                    </div>
-                    <div class="menu_line222" id="dec"><br /><a href="#/homepage/menudetail">Vegetarian Nachos</a>
-                    </br>$8.0</div>
-                </div>
-                <div class="menu_line22">
-                    <div class="menu_line11">
-                        <div id="menu_smlimg"> <img src="assets/images/italian_sausage_sandwich.jpg" id="menu_smlimg"/></div>
-                    </div>
-                    <div class="menu_line222" id="dec"><br /><a href="#/homepage/menudetail">Pumpkin Quesadilla</a>
-                    </br>$10.0</div>
-                </div>
-                <div class="menu_line22">
-                    <div class="menu_line11">
-                        <div id="menu_smlimg"> <img src="assets/images/shrimp_diablo.jpg" id="menu_smlimg"/></div>
-                    </div>
-                    <div class="menu_line222" id="dec"><br /><a href="#/homepage/menudetail">Crispy Sweet Pototo</a>
-                    </br>$9.0</div>
-                </div>
-                <div class="menu_line22">
-                    <div class="menu_line11">
-                        <div id="menu_smlimg"> <img src="assets/images/italian_sausage_sandwich.jpg" id="menu_smlimg"/></div>
-                    </div>
-                    <div class="menu_line222" id="dec"><br /><a href="#/homepage/menudetail">Fried Crab Claws</a>
-                    </br>$6.0</div>
-                </div>
-            </div>
-        </div>
+            </li>
+        </ul>
+      </div>   -->
+       
     </article>
 
    <!-- ============================= reservation ============================= -->

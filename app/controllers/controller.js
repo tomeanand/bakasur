@@ -9,10 +9,12 @@ spiceUpControllers.run(function()	{
 
 })
 
-spiceUpControllers.controller('AppCtrl',['$scope', '$location','MenuResponder',
-	function($scope, $location, MenuResponder)	{
+spiceUpControllers.controller('AppCtrl',['$scope', '$location','MenuResponder','MenuService','menuBycat',
+	function($scope, $location, MenuResponder,MenuService,menuBycat)	{
 		$scope.$parent.$root['manuList'] = MenuResponder.query();
-		
+		$scope.$parent.$root['menuList'] = MenuService.query();
+		$scope.$parent.$root['CatMenu'] = menuBycat.query({menu_category : 1});
+
 		$scope.triggerAside = function() {
 			console.log('triggering aside');
 			Lungo.Router.aside('main', 'aside1');
@@ -33,3 +35,23 @@ spiceUpControllers.controller ('DeeplinkCtrl',['$scope', '$routeParams',
 		$scope.paramMsg = $routeParams.msg;
 	}]);
 
+spiceUpControllers.controller ('menuCtrl',['$scope', '$location','MenuService','menuBycat',
+	function($scope, $location, $routeParams,MenuService,menuBycat)	{
+		$scope.Showmenu = $scope.$parent.$root['menuList']
+
+		$scope.ShowmenuByCat = 	$scope.$parent.$root['CatMenu'] 
+		$scope.paramMsg = $routeParams.menu_category;
+
+	}]);
+
+
+// spiceUpControllers.controller ('CatCtrl',['$scope', '$location','menuBycat',
+// 	function($scope, $location,menuBycat)	{
+		 
+// 		$scope.ShowmenuByCat = $scope.$parent.$root['CatMenu']
+// 	}]);
+
+// function Ctrl($scope, shareScope) {
+//     $scope.prop2 = shareScope.set('data');
+//     $scope.both = shareScope.get();
+// }
