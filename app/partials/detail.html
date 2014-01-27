@@ -1,4 +1,4 @@
-<section id="menus" data-transition="slide">
+<section id="detail" data-transition="slide">
 	<header data-title="Menu" class="extended">
 		<nav class="box">
 			<a href="#/homepage/list" data-router="section" data-label="BACK" class="icon chevron-left"></a>
@@ -9,20 +9,19 @@
         <a href="#/homepage/myorder" data-router="article" data-label="MY ORDER" class=""></a>
         <a href="#/homepage/form-normal" data-router="article" data-label="RESERVATION" class=""></a>
     </nav>
-	<article id="list" class="active scroll indented">
-        <div>
-            <p class="margin bottom">
-                <a id="veg" href="#/detail" class="button">VEG</a>
-                <a id="nonveg" href="#" class="button">NON VEG</a>
-            </p>
-            	<ul>
-			<li class="thumb" data-ng-repeat="item in menuData">
-				<img src="http://cdn.tapquo.com/lungo/icon-144.png">
-				<div>
-					<div class="on-right text tiny"><strong><a href="#" >{{item.menu_name.toUpperCase()}} </a></strong></div>
-				</div>
-			</li>
-		</ul>            
+	  <!-- ====================================menudetails=========================== --> 
+   <article id="details" class="scroll active">
+     <div class="large text  bold align_center">
+      <img src="assets/images/caprese_salad.jpg"> </div> 
+        <div id="buttons" class="scrollable indented  current">
+             <div class="large text  bold align_center">
+                <h3 class="large text  bold align_center">Vegetarian nachos</h3>
+                <p>$7.5</p>
+                <p>Serve for 4 people</p>
+                <p>Lorem ipsum</p>
+            </div>    
+               <a href="#" class="button anchor margin-bottom">Add this to my order</a>
+               <a href="#" class="button anchor margin-bottom">Share this</a>
         </div>
     </article>
     <footer>

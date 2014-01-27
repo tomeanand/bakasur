@@ -3,6 +3,7 @@
         <title>SpiceUp</title>
         <!-- <meta name="viewport" content="width=device-width, user-scalable=true;"> -->
         <link rel="stylesheet" type="text/css" href="libs/lungo/lungo.css"/>
+        <link rel="stylesheet" type="text/css" href="libs/style1.css"/>
         <link rel="stylesheet" type="text/css" href="libs/lungo/lungo.icon.css"/>
         <link rel="stylesheet" type="text/css" href="libs/lungo/theme.lungo.css">
         <script type="text/javascript" src="libs/quojs/quo.debug.js"></script>
@@ -14,29 +15,58 @@
                 <nav class="left">
                     <a data-icon="menu" lab-aside="aside1"></a>
                 </nav>
+                <div class="left">
+                    <div class="centered title">Comidasur</div>
+                </div>
                 <nav class="right">
-                     <a href="#/homepage">Home</a>
-                    <a href="#/categorylist">Menu</a>
-                    <a href="#/static">Favorites</a>
-                    <a href="#/deeplink/view/demo">Contact</a>
+                    <a href="#/homepage/showallmenu">Show all</a>
+                    <a href="#/homepage/menus">Menu</a>
+                    <a href="#/homepage/login">Login</a>
                 </nav>
                 <p>{{menuData[0]}}</p>
-            </header>
+                 <p>{{Showmenu[0]}}</p>
+                 <p>{{ShowmenuByCat[0]}}</p>
+                
 
-            <article id="main-article" class="active">
-                <h1>comidasur</h1>
-                <p>Restaurant menu app for local</p>
-                <p>hello</p>
+            </header>
+            <article id="main-article" class="active list indented scroll">
+              <ul>
+                <li class="dark">
+                    <strong>
+                    The Restaurant App displays your restaurant menu.
+                </strong>
+                </li>
+                <li class="feature">
+                    <strong>Menu search</strong>
+                    <p>The Restaurant App displays your restaurant menu and allows users to make reservations. It comes with an awesome UI design and a ton of features! This app runs on the Android platform and is integrated with admin web page for the management of menu lists, reservations, taxes and currency.The search box in the menu page helps users find what items quickly</p>
+                </li>
+                <li class="feature">
+                    <strong>Order list</strong>
+                    <p>Save your all orders into list and view the total price.</p>
+                </li>
+                <li class="feature">
+                    <strong>Make reservation</strong>
+                    <p>User can make reservation through and send them to the admin web page to be processed.</p>
+                </li>
+                <li class="feature">
+                    <strong>Menu category</strong>
+                    <p>All menus are organized in categories for easy access.</p>
+                </li>
+            </ul>
             </article>
         </section>
         <aside id="aside1">
             <header data-title="SpiceUp"></header>
             <article class="active list scroll">
                 <ul>
-                    <li><a href="#/homepage"><strong>Home</strong></a></li>
-                    <li><a href="#/categorylist"><strong>Menu</strong></a></li>
-                    <li><a href="#/static"><strong>Favorites</strong></a></li>
-                    <li><a href="#/deeplink/view/demo"><strong>Contact</strong></a></li>
+                    <li><a href="#/homepage/showallmenu"><strong>Show all</strong></a></li>
+                    <li><a href="#/homepage/menus"><strong>Menu</strong></a></li>
+                    <li><a href="#/homepage/login"><strong>Login</strong></a></li>
+                    <li><a href="#/contactus/map"><strong>Contact Us</strong></a></li>
+                    <li><a href="#/order/myorder"><strong>My Order</strong></a></li>
+                    <li><a href="#/homepage/"><strong>Track My Order</strong></a></li>
+                    <!-- <li><a href="#/static"><strong>Favorites</strong></a></li>
+                    <li><a href="#/deeplink/view/demo"><strong>Contact</strong></a></li> -->
                 </ul>
             </article>
         </aside>
@@ -51,5 +81,7 @@
         <script type="text/javascript" src="app/app.js"></script>
         <script type="text/javascript" src="app/controllers/controller.js"></script>
         <script type="text/javascript" src="app/services/spiceUpServices.js"></script>
+        <script type="text/javascript" src="app/services/showMenuServices.js"></script>
+        <script type="text/javascript" src="app/services/cat.js"></script>
     </body>
 </html>
