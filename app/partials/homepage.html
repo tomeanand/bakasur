@@ -127,7 +127,7 @@
                 <div style="height:30px">
                     <div class="on-right text tiny">
                         <strong>
-                        <a href="#/homepage/menuitems" >{{item.subcategory_name.toUpperCase()}} </a>
+                        <a href="#/homepage/menuitems/{{item.subcategory_id}}" >{{item.subcategory_name.toUpperCase()}} </a>
                         </strong>
                     </div>
                 </div>
@@ -144,11 +144,12 @@
         </div>
         <div>
             <ul>
-                <li class="thumb" data-ng-repeat="item in Showmenu">
+                <li class="thumb" ng-repeat="item in ShowmenuByCatId">
                      <img src="assets/images/logo.jpg"> 
                     <div style="height:30px">
                         <div class="on-right text tiny">
-                            <a href="#/homepage/menudetail" ><strong>{{item.menu_name.toUpperCase()}}</strong></a>
+                            <a href="#/homepage/menudetail" >
+                                <strong>{{item.menu_id.toUpperCase()}}</strong></a>
                              ${{item.menu_price}}
                         </div>
                     </div>

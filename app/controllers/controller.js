@@ -10,11 +10,12 @@ spiceUpControllers.run(function()	{
 })
 
 spiceUpControllers.controller('AppCtrl',['$scope', '$location','MenuResponder',
-								'MenuService','menuBycat','menuIdPost',
-	function($scope, $location, MenuResponder,MenuService,menuBycat,menuIdPost)	{
+								'MenuService','menuBycat','menuIdPost','catIdPost',
+	function($scope, $location, MenuResponder,MenuService,menuBycat,menuIdPost,catIdPost)	{
 		$scope.$parent.$root['manuList'] = MenuResponder.query();
 		$scope.$parent.$root['menuList'] = MenuService.query();
 		$scope.$parent.$root['IdPost'] = menuIdPost.query();
+		$scope.$parent.$root['catIdPost'] = catIdPost.query();
 		$scope.$parent.$root['CatMenu'] = menuBycat.query({menu_category : 1});
 
 		$scope.triggerAside = function() {
@@ -55,7 +56,14 @@ spiceUpControllers.controller('PostCtrl', ['$scope','$location', '$routeParams',
 $scope.post =$routeParams.menu_id;
 $scope.post =$routeParams.menu_name;
   }]);
+spiceUpControllers.controller('CatCtrl', ['$scope','$location', '$routeParams', 'catIdPost',
+  function($scope,$location, $routeParams, catIdPost) {
 
+  	$scope.ShowmenuByCatId = 	$scope.$parent.$root['catIdPost'] 
+    // $scope.post = menuIdPost.get({menu_id: $routeParams.menu_id});
+$scope.menu_id =$routeParams.subcategory_id;
+$scope.post =$routeParams.menu_name;
+  }]);
 
 // angular.module('clientApp')
 //   .controller('ProductCtrl', function ($scope, ProductsFactory, $modal, $log, $stateParams) {
