@@ -5,15 +5,29 @@
         </nav>
     </header>
       <nav class="groupbar">
-        <a href="#/adminreservation" data-router="article" data-label="Reservation" class="active"></a>
-        <a href="#/menu" data-router="article" data-label="Menu" class=""></a>
-        <a href="#/category" data-router="article" data-label="Category" class=""></a>
+        <a href="#/adminreservation/reserveEditDel" data-router="article" data-label="Reservation" class="active"></a>
+        <a href="#/adminreservation/showmenu" data-router="article" data-label="Menu" class=""></a>
+        <a href="#/adminreservation/showcuisine" data-router="article" data-label="Cuisine" class=""></a>
+        <a href="#/adminreservation/showcategory" data-router="article" data-label="Category" class=""></a>
+        <a href="#/adminreservation/settings" data-router="article" data-label="Settings" class=""></a>
         <a href="#/superuser" data-router="article" data-label="Logout" class=""></a>
     </nav>
       <!-- ====================================reservation edit delete=========================== --> 
   <article id="reserveEditDel" class="scroll active">
-    <h1 class="title">Reservation List</h1>
-    <div class="DivTable">
+    <!-- <h1 class="title">Reservation List</h1> -->
+ <div style="width:100%">
+    <div class="reserveDiv1">
+      <h1 class="reservetitle1">Reservation List</h1>
+    </div>
+    <div class="reserveDiv2">
+      <h1 class="reservetitle2">Search by name
+        <input class="large text  bold align_right" type="search" placeholder="Type your search..."> 
+        <a href="#" class="button tiny" >Search</a>
+      </h1>
+    </div>
+  </div>
+
+    <div class="divtables">
     <div class="Row">
         <div class="Cell" style="background-color:#FF9900">ID</div>
         <div class="Cell" style="background-color:#FF9900">Name</div>
@@ -36,7 +50,7 @@
         <div class="Cell">2</div>
         <div class="Cell">Harry</div>
         <div class="Cell">1</div>
-        <div class="Cell">4-1-14<</div>
+        <div class="Cell">4-1-14</div>
         <div class="Cell">45454544</div>
         <div class="Cell">Not processed</div>
         <div class="Cell"><a href="#/adminreservation/reservationdetail">View Detail|Delete</a></div>
@@ -45,7 +59,7 @@
         <div class="Cell">3</div>
         <div class="Cell">James</div>
         <div class="Cell">2</div>
-        <div class="Cell">7-1-14<</div>
+        <div class="Cell">7-1-14</div>
         <div class="Cell">6767676</div>
         <div class="Cell">Not processed</div>
         <div class="Cell"><a href="#/adminreservation/reservationdetail">View Detail|Delete</a></div>
@@ -54,16 +68,170 @@
         <div class="Cell">4</div>
         <div class="Cell">Vicky</div>
         <div class="Cell">2</div>
-        <div class="Cell">16-1-14<</div>
+        <div class="Cell">16-1-14</div>
         <div class="Cell">323232</div>
         <div class="Cell">Not processed</div>
         <div class="Cell"><a href="#/adminreservation/reservationdetail">View Detail|Delete</a></div>
     </div>
  </div></article>
-       <!-- ====================================reservation details=========================== -->
+
+ <!-- ====================================show menu=========================== -->
+
+ <article id="showmenu" class="scroll active">
+    <div style="width:100%">
+    <div class="reserveDiv1">
+      <h1 class="reservetitle1">Menu List</h1>
+    </div>
+    <div class="reserveDiv2">
+      <h1 class="reservetitle2">Search by name
+        <input class="large text  bold align_right" type="search" placeholder="Type your search..."> 
+        <a href="#" class="button tiny" >Search</a>
+      </h1>
+    </div>
+  </div>
+    <div class="divtables">
+    <div class="Row">
+        <div class="Cell" style="background-color:#FF9900">ID</div>
+        <div class="Cell" style="background-color:#FF9900">Name</div>
+        <div class="Cell" style="background-color:#FF9900">Serve for</div>
+        <div class="Cell" style="background-color:#FF9900">Price</div>
+        <div class="Cell" style="background-color:#FF9900">Category</div>
+        <div class="Cell" style="background-color:#FF9900">View Detail|Edit|Delete</div>
+    </div>
+    <div class="Row">
+        <div class="Cell">1</div>
+        <div class="Cell">Chicken wings</div>
+        <div class="Cell">2</div>
+        <div class="Cell">$9.5</div>
+        <div class="Cell">appetizer</div>
+        <div class="Cell"><a href="#/adminreservation/menudetail">View Detail|Edit|Delete</a></div>
+    </div>
+    <div class="Row">
+        <div class="Cell">2</div>
+        <div class="Cell">veg soup</div>
+        <div class="Cell">1</div>
+        <div class="Cell">$4.5</div>
+        <div class="Cell">appetizer</div>
+        <div class="Cell"><a href="#/adminreservation/menudetail">View Detail|Edit|Delete</a></div>
+    </div>
+    <div class="Row">
+        <div class="Cell">3</div>
+        <div class="Cell">coke</div>
+        <div class="Cell">1</div>
+        <div class="Cell">$1.5</div>
+        <div class="Cell">beverage</div>
+        <div class="Cell"><a href="#/adminreservation/menudetail">View Detail|Edit|Delete</a></div>
+    </div>
+    </div>
+    <div style="width:100%;height:50px;">
+    <div class="btds">
+        <a id="add" href="#/adminreservation/addmenu" class="btn">Add Menu</a>
+        <!-- <input type="button" class="btn" name="Add" value="Add New Menu" /> -->
+    </div>
+    </div>
+</article>
+
+<!-- ====================================show category=========================== -->
+
+ <article id="showcategory" class="scroll active">
+    <div style="width:100%">
+    <div class="reserveDiv1">
+      <h1 class="reservetitle1">Category List</h1>
+    </div>
+    <div class="reserveDiv2">
+      <h1 class="reservetitle2">Search by name
+        <input class="large text  bold align_right" type="search" placeholder="Type your search..."> 
+        <a href="#" class="button tiny" >Search</a>
+      </h1>
+    </div>
+  </div>
+    <div class="divtable">
+    <div class="Row">
+        <div class="Cell1" style="background-color:#FF9900">ID</div>
+        <div class="Cell1" style="background-color:#FF9900">Name</div>
+        <div class="Cell1" style="background-color:#FF9900">Edit|Delete</div>
+    </div>
+    <div class="Row">
+        <div class="Cell1">1</div>
+        <div class="Cell1">Appetizer</div>
+        <div class="Cell1"><a href="#/adminreservation/categorydetail">Edit|Delete</a></div>
+    </div>
+    <div class="Row">
+        <div class="Cell1">2</div>
+        <div class="Cell1">Beverage</div>
+        <div class="Cell1"><a href="#/adminreservation/categorydetail">Edit|Delete</a></div>
+    </div>
+    <div class="Row">
+        <div class="Cell1">3</div>
+        <div class="Cell1">Pizza</div>
+        <div class="Cell1"><a href="#/adminreservation/categorydetail">Edit|Delete</a></div>
+    </div>
+    </div>
+    <div style="width:100%;height:50px;">
+    <div class="btds">
+        <a id="add" href="#/adminreservation/addcategory" class="btn">Add New</a>
+        <!-- <input type="button" class="btn" name="Add" value="Add New Menu" /> -->
+    </div>
+    </div>
+</article>
+<!-- ====================================show cuisine=========================== -->
+
+ <article id="showcuisine" class="scroll active">
+    <div style="width:100%">
+    <div class="reserveDiv1">
+      <h1 class="reservetitle1">Cuisine List</h1>
+    </div>
+    <div class="reserveDiv2">
+      <h1 class="reservetitle2">Search by name
+        <input class="large text  bold align_right" type="search" placeholder="Type your search..."> 
+        <a href="#" class="button tiny" >Search</a>
+      </h1>
+    </div>
+  </div>
+    <div class="divtable">
+    <div class="Row">
+        <div class="Cell1" style="background-color:#FF9900">ID</div>
+        <div class="Cell1" style="background-color:#FF9900">Name</div>
+        <div class="Cell1" style="background-color:#FF9900">Edit|Delete</div>
+    </div>
+    <div class="Row">
+        <div class="Cell1">1</div>
+        <div class="Cell1">Indian</div>
+        <div class="Cell1"><a href="#/adminreservation/cuisinedetail">Edit|Delete</a></div>
+    </div>
+    <div class="Row">
+        <div class="Cell1">2</div>
+        <div class="Cell1">Italian</div>
+        <div class="Cell1"><a href="#/adminreservation/cuisinedetail">Edit|Delete</a></div>
+    </div>
+    </div>
+    <div style="width:100%;height:50px;">
+    <div class="btds">
+        <a id="add" href="#/adminreservation/addcuisine" class="btn">Add New</a>
+        <!-- <input type="button" class="btn" name="Add" value="Add New Menu" /> -->
+    </div>
+    </div>
+</article>
+<!-- ================================settings============================= -->
+    <article id="settings" class="scroll active">
+        <div class="form">
+            <fieldset>
+                 <input type="text" placeholder="Tax(%):" class="large text  bold align_center">
+            </fieldset>
+            <fieldset>
+              <input type="text" placeholder="Currency" class="large text  bold align_center">
+            </fieldset>                
+        </div>
+        <div style="width:100%;height:50px;">
+    <div class="btdv"><input type="button" class="btn" name="Edit" value="Change" /></div>
+    <!-- <div class="btdv"><input type="button" class="btn" name="Delete" value="Delete" /></div> -->
+    </div>
+           
+    </article>
+       <!-- ====================================menu details=========================== -->
         
-<article id="reservationdetail">
-  <div style="width:100%">
+<article id="menudetail">
+ <!--  <div style="width:100%">
     <div class="reserveDiv1">
       <h1 class="reservetitle1">Reservation Detail</h1>
     </div>
@@ -73,8 +241,8 @@
         <a href="#" class="button tiny" >Search</a>
       </h1>
     </div>
-  </div>
-<div><p></p></div>
+  </div> -->
+<h1 class="title">Menu Detail</h1>
 <div class="menu_detail">
      <div class="menu_line">
         <div class="menu_line1">ID</div>
@@ -117,6 +285,320 @@
     <div style="width:100%;height:50px;">
     <div class="btdv"><input type="button" class="btn" name="Edit" value="Edit" /></div>
     <div class="btdv"><input type="button" class="btn" name="Delete" value="Delete" /></div>
+    </div>
+</div>
+</article>
+<!-- ====================================category details=========================== -->
+        
+<article id="categorydetail">
+ <!--  <div style="width:100%">
+    <div class="reserveDiv1">
+      <h1 class="reservetitle1">Reservation Detail</h1>
+    </div>
+    <div class="reserveDiv2">
+      <h1 class="reservetitle2">Search by name
+        <input class="large text  bold align_right" type="search" placeholder="Type your search..."> 
+        <a href="#" class="button tiny" >Search</a>
+      </h1>
+    </div>
+  </div> -->
+<h1 class="title">Category Detail</h1>
+<div class="menu_detail">
+     <div class="menu_line">
+        <div class="menu_line1">Category name</div>
+        <div class="menu_line2">Appetizer</div>
+    </div>
+        
+    <div style="width:100%;height:250px;">
+      <div class="menu_line1_img">Image Preview</div>
+        <div class="menu_line2_img">
+          <div style="width:200;height:240"><img src="assets/images/thumb_COLOURBOX7102662.jpg"></div> 
+        </div>
+    </div>
+           
+    <div style="width:100%;height:50px;">
+    <div class="btdv"><input type="button" class="btn" name="Edit" value="Edit" /></div>
+    <div class="btdv"><input type="button" class="btn" name="Delete" value="Delete" /></div>
+    </div>
+</div>
+</article>
+<!-- ====================================cuisine details=========================== -->
+        
+<article id="cuisinedetail">
+ <!--  <div style="width:100%">
+    <div class="reserveDiv1">
+      <h1 class="reservetitle1">Reservation Detail</h1>
+    </div>
+    <div class="reserveDiv2">
+      <h1 class="reservetitle2">Search by name
+        <input class="large text  bold align_right" type="search" placeholder="Type your search..."> 
+        <a href="#" class="button tiny" >Search</a>
+      </h1>
+    </div>
+  </div> -->
+<h1 class="title">Cuisine Detail</h1>
+<div class="menu_detail">
+     <div class="menu_line">
+        <div class="menu_line1">Cuisine name</div>
+        <div class="menu_line2">Italian</div>
+    </div>
+        
+   <!--  <div style="width:100%;height:250px;">
+      <div class="menu_line1_img">Image Preview</div>
+        <div class="menu_line2_img">
+          <div style="width:200;height:240"><img src="assets/images/thumb_COLOURBOX7102662.jpg"></div> 
+        </div>
+    </div> -->
+           
+    <div style="width:100%;height:50px;">
+    <div class="btdv"><input type="button" class="btn" name="Edit" value="Edit" /></div>
+    <div class="btdv"><input type="button" class="btn" name="Delete" value="Delete" /></div>
+    </div>
+</div>
+</article>
+<!-- ====================================reservation details=========================== -->
+        
+<article id="reservationdetail">
+ <!--  <div style="width:100%">
+    <div class="reserveDiv1">
+      <h1 class="reservetitle1">Reservation Detail</h1>
+    </div>
+    <div class="reserveDiv2">
+      <h1 class="reservetitle2">Search by name
+        <input class="large text  bold align_right" type="search" placeholder="Type your search..."> 
+        <a href="#" class="button tiny" >Search</a>
+      </h1>
+    </div>
+  </div> -->
+<h1 class="title">Reservation Detail</h1>
+<div class="menu_detail">
+     <div class="menu_line">
+        <div class="menu_line1">ID</div>
+        <div class="menu_line2">34</div>
+    </div>
+    <div class="menu_line">
+      <div class="menu_line1">Name</div>
+        <div class="menu_line2">Jose</div>
+    </div>
+    
+    <div class="menu_line">
+      <div class="menu_line1">Number of people</div>
+        <div class="menu_line2">4</div>
+    </div>
+    
+    <div class="menu_line">
+      <div class="menu_line1">Date and Time</div>
+        <div class="menu_line2">2014-01-27 01:01:01</div>
+    </div>
+    
+    <div class="menu_line">
+      <div class="menu_line1">Phone number</div>
+        <div class="menu_line2">9999999</div>
+    </div>
+    <div class="menu_line">
+      <div class="menu_line1">Order list</div>
+        <div class="menu_line2">2 Vegetarian Nachos $15,Order:$15 Tax 10%:$1.5 Total:$16.5</div>
+    </div>
+    <div class="menu_line">
+      <div class="menu_line1">Comment</div>
+        <div class="menu_line2">I want a table near the window if possible</div>
+    </div>
+    <div class="menu_line">
+      <div class="menu_line1">Status</div>
+        <div class="menu_line2">Processed</div>
+    </div>
+    
+    <!-- <div style="width:100%;height:250px;">
+      <div class="menu_line1_img">Image Preview</div>
+        <div class="menu_line2_img">
+          <div style="width:200;height:240"><img src="assets/images/thumb_COLOURBOX7102662.jpg"></div> 
+        </div>
+    </div> -->
+    
+    <!-- <div class="menu_line">
+      <div class="menu_line1">Description</div>
+        <div class="menu_line2">Loren ipsum dolor sit amet,consectetur adipiscing elit.Cras eu sem menus.
+            Vivamus utsapien ut tortor vestibulum imperdiet
+        </div>
+    </div> -->
+    
+    <div style="width:100%;height:50px;">
+    <div class="btdv"><input type="button" class="btn" name="Edit" value="Save change" /></div>
+    <!-- <div class="btdv"><input type="button" class="btn" name="Delete" value="Delete" /></div> -->
+    </div>
+</div>
+</article>
+<!-- ====================================Add menu=========================== -->
+        
+<article id="addmenu">
+ <!--  <div style="width:100%">
+    <div class="reserveDiv1">
+      <h1 class="reservetitle1">Reservation Detail</h1>
+    </div>
+    <div class="reserveDiv2">
+      <h1 class="reservetitle2">Search by name
+        <input class="large text  bold align_right" type="search" placeholder="Type your search..."> 
+        <a href="#" class="button tiny" >Search</a>
+      </h1>
+    </div>
+  </div> -->
+<h1 class="title">Add Menu</h1>
+<div class="menu_detail">
+     <div class="menu_line">
+        <div class="menu_line1">Menu Name</div>
+        <div class="menu_line2"></div>
+    </div>
+    <div class="menu_line">
+      <div class="menu_line1">Serve for</div>
+        <div class="menu_line2"></div>
+    </div>
+    <div class="menu_line">
+      <div class="menu_line1">Price</div>
+        <div class="menu_line2"></div>
+    </div>
+    <div class="menu_line">
+      <div class="menu_line1">Category</div>
+        <div class="menu_line2"><select id="menu_category" name="menu_category">
+                                        <option value="" selected>Select Category</option></select></div>
+    </div>
+    <div class="menu_line">
+      <div class="menu_line1">Cuisine</div>
+        <div class="menu_line2"><select id="menu_cuisine" name="menu_cuisine">
+                                        <option value="" selected>Select Cuisine</option></select></div>
+    </div>
+    <div class="menu_line">
+      <div class="menu_line1">Subcategory</div>
+        <div class="menu_line2"><select id="menu_subcategory" name="menu_subcategory">
+                                        <option value="" selected>Select Subcategory</option></select></div>
+    </div>
+    <div class="menu_line">
+      <div class="menu_line1">Image for Preview</div>
+        <div class="menu_line2"><fieldset>
+                <input type="file" id="phno" class="large text  bold align_center" placeholder="">
+            </fieldset></div>
+    </div>
+    <div class="menu_line">
+      <div class="menu_line1">Menu Description</div>
+        <div class="menu_line2">
+        </div>
+    </div>
+    
+    
+    <!-- <div style="width:100%;height:250px;">
+      <div class="menu_line1_img">Image Preview</div>
+        <div class="menu_line2_img">
+          <div style="width:200;height:240"><img src="assets/images/thumb_COLOURBOX7102662.jpg"></div> 
+        </div>
+    </div> -->
+    
+    <!-- <div class="menu_line">
+      <div class="menu_line1">Description</div>
+        <div class="menu_line2">Loren ipsum dolor sit amet,consectetur adipiscing elit.Cras eu sem menus.
+            Vivamus utsapien ut tortor vestibulum imperdiet
+        </div>
+    </div> -->
+    
+    <div style="width:100%;height:50px;">
+    <div class="btdv"><input type="button" class="btn" name="Edit" value="Submit" /></div>
+    <div class="btdv"><input type="button" class="btn" name="Delete" value="Clear" /></div>
+    </div>
+</div>
+</article>
+<!-- ====================================Add category=========================== -->
+        
+<article id="addcategory">
+ <!--  <div style="width:100%">
+    <div class="reserveDiv1">
+      <h1 class="reservetitle1">Reservation Detail</h1>
+    </div>
+    <div class="reserveDiv2">
+      <h1 class="reservetitle2">Search by name
+        <input class="large text  bold align_right" type="search" placeholder="Type your search..."> 
+        <a href="#" class="button tiny" >Search</a>
+      </h1>
+    </div>
+  </div> -->
+<h1 class="title">Add Category</h1>
+<div class="menu_detail">
+     <div class="menu_line">
+        <div class="menu_line1">Category Name</div>
+        <div class="menu_line2"></div>
+    </div>
+    <div class="menu_line">
+      <div class="menu_line1">Image for Preview</div>
+        <div class="menu_line2"><fieldset>
+                <input type="file" id="phno" class="large text  bold align_center" placeholder="">
+            </fieldset></div>
+    </div>
+    </div>
+    
+    
+    <!-- <div style="width:100%;height:250px;">
+      <div class="menu_line1_img">Image Preview</div>
+        <div class="menu_line2_img">
+          <div style="width:200;height:240"><img src="assets/images/thumb_COLOURBOX7102662.jpg"></div> 
+        </div>
+    </div> -->
+    
+    <!-- <div class="menu_line">
+      <div class="menu_line1">Description</div>
+        <div class="menu_line2">Loren ipsum dolor sit amet,consectetur adipiscing elit.Cras eu sem menus.
+            Vivamus utsapien ut tortor vestibulum imperdiet
+        </div>
+    </div> -->
+    
+    <div style="width:100%;height:50px;">
+    <div class="btdv"><input type="button" class="btn" name="Edit" value="Submit" /></div>
+    <div class="btdv"><input type="button" class="btn" name="Delete" value="Clear" /></div>
+    </div>
+</div>
+</article>
+<!-- ====================================Add cuisine=========================== -->
+        
+<article id="addcuisine">
+ <!--  <div style="width:100%">
+    <div class="reserveDiv1">
+      <h1 class="reservetitle1">Reservation Detail</h1>
+    </div>
+    <div class="reserveDiv2">
+      <h1 class="reservetitle2">Search by name
+        <input class="large text  bold align_right" type="search" placeholder="Type your search..."> 
+        <a href="#" class="button tiny" >Search</a>
+      </h1>
+    </div>
+  </div> -->
+<h1 class="title">Add Cuisine</h1>
+<div class="menu_detail">
+     <div class="menu_line">
+        <div class="menu_line1">Cuisine Name</div>
+        <div class="menu_line2"></div>
+    </div>
+    <!-- <div class="menu_line">
+      <div class="menu_line1">Image for Preview</div>
+        <div class="menu_line2"><fieldset>
+                <input type="file" id="phno" class="large text  bold align_center" placeholder="">
+            </fieldset></div>
+    </div> -->
+    </div>
+    
+    
+    <!-- <div style="width:100%;height:250px;">
+      <div class="menu_line1_img">Image Preview</div>
+        <div class="menu_line2_img">
+          <div style="width:200;height:240"><img src="assets/images/thumb_COLOURBOX7102662.jpg"></div> 
+        </div>
+    </div> -->
+    
+    <!-- <div class="menu_line">
+      <div class="menu_line1">Description</div>
+        <div class="menu_line2">Loren ipsum dolor sit amet,consectetur adipiscing elit.Cras eu sem menus.
+            Vivamus utsapien ut tortor vestibulum imperdiet
+        </div>
+    </div> -->
+    
+    <div style="width:100%;height:50px;">
+    <div class="btdv"><input type="button" class="btn" name="Edit" value="Submit" /></div>
+    <div class="btdv"><input type="button" class="btn" name="Delete" value="Clear" /></div>
     </div>
 </div>
 </article>

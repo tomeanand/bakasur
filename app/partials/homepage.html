@@ -36,79 +36,50 @@
                 <a href="http://www.twitter.com"><img src="assets/images/next_button.png" /></a>
             </div>
             </div>
-        <div style="text-align:center"><p><h1 class="headings">Or </h1></p></div>
+        <div style="text-align:center;margin-top:50px"><p><h1 class="headings">Or </h1></p></div>
         <div class="form">
-            <div style="text-align:left"><p><h1 style="color:#E47911" class="title">Sign In </h1></p></div>
+            <div style="text-align:left;margin-top:50px"><p><h1 style="color:#E47911" class="title">Sign In </h1></p></div>
+            <div style="text-align:left;margin-top:20px">
             <fieldset>
                 <label>Your Email:</label>
-                <input type="text" placeholder="Your email">
+                <input type="text" placeholder="">
             </fieldset>
            
             <fieldset>
                 <label>Password:</label>
                 <input type="password">
             </fieldset>
-            <fieldset>
-                <textarea></textarea>
-            </fieldset>
+           </div>
+            <div style="text-align:left;margin-top:10px">
             <a href="#/myplate" data-router="article" class="button anchor accept" data-label="Sign In"></a>
+        </div>
         </div>
     </div>
     </article>
      <!-- =============================show All menus============================= -->
-     <article id="showallmenu" class="list scroll active">
-          <ul>
-            <li class="thumb" data-ng-repeat="item in Showmenu">
-                 <img src="assets/images/logo.jpg"> 
-                <div style="height:30px">
-                    <div class="on-right text tiny">
-                        <strong>
-                        <a href="#/homepage/menuitems" >{{item.menu_name.toUpperCase()}} </a>
-                        </strong>
-                    </div>
-                </div>
-            </li>
-        </ul>        
-       <!--  <div class="menu_detail1">
-            <div class="menu_line22">
-                <div class="menu_line11">
-                    <div id="menu_smlimg"> <img src="assets/images/italian_food.jpg" id="menu_smlimg"/></div>
-                </div>
-                <div class="menu_line222"id="dec" ><br /><a href="#/homepage/menudetail">Chicken Wings</a></div>
-            </div>
-            <div class="menu_line22">
-                <div class="menu_line11">
-                    <div id="menu_smlimg"> <img src="assets/images/strawbwrry_sundae.jpg" id="menu_smlimg"/></div>
-                </div>
-                <div class="menu_line222" id="dec"><br /><a href="#/homepage/menudetail">Vegetarian Nachos</a></div>
-            </div>
-            <div class="menu_line22">
-                <div class="menu_line11">
-                    <div id="menu_smlimg"> <img src="assets/images/italian_sausage_sandwich.jpg" id="menu_smlimg"/></div>
-                </div>
-                <div class="menu_line222" id="dec"><br /><a href="#/homepage/menudetail">Pumpkin Quesadilla</a></div>
-            </div>
-            <div class="menu_line22">
-                <div class="menu_line11">
-                    <div id="menu_smlimg"> <img src="assets/images/shrimp_diablo.jpg" id="menu_smlimg"/></div>
-                </div>
-                <div class="menu_line222" id="dec"><br /><a href="#/homepage/menudetail">Crispy Sweet Pototo</a></div>
-            </div>
-            <div class="menu_line22">
-                <div class="menu_line11">
-                    <div id="menu_smlimg"> <img src="assets/images/italian_sausage_sandwich.jpg" id="menu_smlimg"/></div>
-                </div>
-                <div class="menu_line222" id="dec"><br /><a href="#/homepage/menudetail">Fried Crab Claws</a></div>
-            </div>
-      </div> -->
+      <article id="showallmenu" class="list scroll active">
+        <div>Search: <input ng-model="query" ></div>
+        <div style="height:40px"> 
+            <ul class="thumb">
+                <li  ng-repeat="cat in ShowmenuByCat | filter:query:menu_category" class="thumbnail phone-listing">
+              <img  src="assets/images/{{cat.menu_image}}">
+                 <p>
+                    <strong>
+                        <a href="#/homepage/menudetail/{{cat.menu_id}}" >{{cat.menu_name}} </a>
+                      
+                    </strong></p>
+                    <p>${{cat.menu_price}}</p>
+                </li>
+            </ul>
+        </div>
     </article>
      <!-- =============================menudetail============================= -->
      <article id="menudetail" class="scroll active">
      <div class="large text  bold align_center">
       <img src="assets/images/caprese_salad.jpg"> </div> 
-        <div id="buttons" class="scrollable indented  current">
+        <div id="buttons" class="scrollable indented  current" ng-controller="PostCtrl">
              <div class="large text  bold align_center">
-                <h3 class="large text  bold align_center">Vegetarian nachos</h3>
+                <h3 class="large text  bold align_center">{{post.menu_id}}{{post.menu_name}}</h3>
                 <p>$7.5</p>
                 <p>Serve for 4 people</p>
                 <p>Lorem ipsum</p>
@@ -125,29 +96,27 @@
                 <h1 class="headings"><strong><b>Share</b></strong></h1>
             </div>
             <div class="menu_linelogin">
-            <fieldset>
-                <textarea rows="2" cols="50"></textarea>
-            </fieldset>
+                <fieldset>
+                    <textarea rows="2" cols="50"></textarea>
+                </fieldset>
             </div>
-
             <div class="menu_linelogin">
-            <div class="log_textbox1"><h2 class="title">Login to Facebook</h2></div>
-            <div class="log_textbox2">
-                <a href="http://www.facebook.com">
-                <img src="assets/images/next_button.png" />
-                </a>
+                <div class="log_textbox1"><h2 class="title">Login to Facebook</h2></div>
+                    <div class="log_textbox2">
+                        <a href="http://www.facebook.com">
+                        <img src="assets/images/next_button.png" />
+                        </a>
+                    </div>
             </div>
-            </div>
-           
             <div class="menu_linelogin">
-            <div class="log_textbox1"><h2 class="title">Login to Twitter</h2></div>
-            <div class="log_textbox2">
-                <a href="http://www.twitter.com"><img src="assets/images/next_button.png" /></a>
-            </div>
+                <div class="log_textbox1"><h2 class="title">Login to Twitter</h2></div>
+                <div class="log_textbox2">
+                    <a href="http://www.twitter.com"><img src="assets/images/next_button.png" /></a>
+                </div>
             </div>
     </div>
     <div id="buttons" class="scrollable indented  current">
-               <a href="#" class="button anchor margin-bottom">Post</a>
+        <a href="#" class="button anchor margin-bottom">Post</a>
     </div>
     </article>
       <!-- =============================category list============================= -->
@@ -158,7 +127,7 @@
                 <div style="height:30px">
                     <div class="on-right text tiny">
                         <strong>
-                        <a href="#/homepage/menuitems" >{{item.subcategory_name.toUpperCase()}} </a>
+                        <a href="#/homepage/menuitems/{{item.subcategory_id}}" >{{item.subcategory_name.toUpperCase()}} </a>
                         </strong>
                     </div>
                 </div>
@@ -166,42 +135,27 @@
         </ul>                   
     </article>
       <!-- =============================menu items by category============================= -->
-
     <article id="menuitems" class="list scroll active">
-        <div>Search: <input ng-model="query" ></div>
-        
-<div style="height:40px"> 
-    <ul class="thumb">
-        <li  ng-repeat="cat in ShowmenuByCat | filter:query:menu_category" class="thumbnail phone-listing">
-<!--                         <li ng-repeat='person in people | filter:searchText'>#{{person.id}} {{person.name}}</li>
- -->       <!--   <p>{{ShowmenuByCat}}</p> -->
-   <img  src="assets/images/logo.jpg">
-          <p>{{cat.menu_name}}</p>
-        </li>
-    </ul>
-  </div>
-
-
-    <!-- <div>
-       
-        <p class="margin bottom">
-                <a id="veg" href="#/homepage/menuitems" class="button">VEG</a>
-                <a id="nonveg" href="#/homepage/menuitems" class="button">NON VEG</a>
-        </p>
-    </div>
-        <ul>
-            <li class="thumb" data-ng-repeat="item in Showmenu">
-                 <img src="assets/images/logo.jpg"> 
-                <div style="height:30px">
-                    <div class="on-right text tiny">
-                        <a href="#/homepage/menudetail" ><strong>{{item.menu_name.toUpperCase()}}</strong></a>
-                         ${{item.menu_price}}
+        <div>
+            <p class="margin bottom">
+                    <a id="veg" href="#/homepage/menuitems" class="button">VEG</a>
+                    <a id="nonveg" href="#/homepage/menuitems" class="button">NON VEG</a>
+            </p>
+        </div>
+        <div>
+            <ul>
+                <li class="thumb" ng-repeat="item in ShowmenuByCatId">
+                     <img src="assets/images/logo.jpg"> 
+                    <div style="height:30px">
+                        <div class="on-right text tiny">
+                            <a href="#/homepage/menudetail" >
+                                <strong>{{item.menu_id.toUpperCase()}}</strong></a>
+                             ${{item.menu_price}}
+                        </div>
                     </div>
-                </div>
-            </li>
-        </ul>
-      </div>   -->
-       
+                </li>
+            </ul>
+        </div>  
     </article>
 
    <!-- ============================= reservation ============================= -->
@@ -235,6 +189,46 @@
         <div id="buttons" class="scrollable indented  current">
                <a href="#" class="button anchor margin-bottom">Send Reservation</a>
             </div>
+    </article>
+     <!-- =============================Track my order============================= -->
+     <article id="trackmyorder" class="list scroll active">
+          <div class="menu_details">
+            <!-- <div class="menu_line">
+            <div class="menu_order_1" style="background-color:#FF6633">Total order:(Tax 10.0%)</div>
+                <div class="menu_order_2" style="background-color:#FF6633"></div>
+                <div class="menu_order_3" style="background-color:#FF6633">$33.0</div>
+            </div> -->
+            <div class="menu_line" style="background-color:#CCCC99;font-size:14px;font-weight:bold"><h1 class="title"> Status</h1></div>
+            <div class="menu_line">
+                <div class="menu_order_1">Crispy Sweet Pottato</div>
+                <div class="menu_order_2">1</div>
+                <div class="menu_order_3">processing</div>
+            </div>
+            <div class="menu_line">
+                <div class="menu_order_1">Chicken Wings</div>
+                <div class="menu_order_2">1</div>
+                <div class="menu_order_3">ready for delivery</div>
+            </div>
+            <div class="menu_line">
+                <div class="menu_order_1">Pasta with Olives and Parsley</div>
+                <div class="menu_order_2">1</div>
+                <div class="menu_order_3">packing</div>
+            </div>
+            <div class="menu_line">
+                <div class="menu_order_1">Lemon Tea</div>
+                <div class="menu_order_2">2</div>
+                <div class="menu_order_3">processing</div>
+            </div>
+            <div class="menu_line">
+                <div class="menu_order_1"></div>
+                <div class="menu_order_2"></div>
+                <div class="menu_order_3">In Kitchen</div>
+            </div>
+        </div>
+        <!-- <div id="buttons" class="scrollable indented  current">
+            <a href="#/homepage/login" class="button anchor margin-bottom">Buy Order</a></br>
+            <a href="#/homepage/myorder" class="button anchor margin-bottom">Clear all Order</a>
+        </div> -->
     </article>
      
      <section id="contacts">
