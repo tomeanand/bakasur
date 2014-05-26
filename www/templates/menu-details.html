@@ -1,0 +1,84 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'firend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view title="{{menuItem.menu_name}}">
+<ion-pane class="has-header">
+<div style="height:100%" class="bg-light">
+	<div class="row" style="height:44px"></div>
+	<div class="row light-bg " style="height:48%" >
+	<img class="img_center pd_5 pd_top" ng-src="http://localhost/restaurant/assets/uploads/{{menuItem.menu_image}}">
+	</div>
+	<!-- <div class="row stable-bg" style="height:8%" >
+
+	<div class="col col-25"> <h4 class="light">$ {{menuItem.menu_price}}</h4> </div>
+	<div class="col col-25">
+		<h4>Quantiry</h4>
+		
+
+	</div>
+	<div class="col col-50">
+		
+	</div>
+
+
+
+
+	
+	</div> -->
+	<div class="row padding-false margin-false" style="height:52%">
+	<div class="col col-60 light-bg pd_5 "><p>
+	{{menuItem.menu_description}}<br><br>
+	Good server for {{menuItem.menu_servefor}} persons.<br>
+	<h5 class="{{baseType.c}}">{{baseType.t}}</h5><br>
+	</p>
+	</div>
+		<div class="col col-40 stable-border stable-bg pd_5">
+			<div class="row pdl ">
+				<div class="col col-33 pdl pdt"><button class="button button-stabledark icon-minus" ng-click="addItemQuantity(false)"></button></div>
+				<div class="col col-33 pdl pdt"><h2 class="quantity_num">{{itemQuantity}}</h2></div>
+				<div class="col col-33 pdl pdt"><button class="button button-stabledark icon-plus" ng-click="addItemQuantity(true)"></button></div>
+			</div>
+			<button class="button button-full button-stabledark icon-box-add full-btn" ng-click="addItem()" ng-show="isShowAdd"> Add </button>
+			<button class="button  button-full button-energized icon-remove full-btn" ng-click="removeItem()" ng-show="!isShowAdd"> Remove </button>
+			<button class="button  button-full button-stabledark icon-cart full-btn" ng-click="navigatePage(3)"> Checkout </button>
+
+			<div class="row pdl ">
+				<div class="col  pdl pdt"><h2 class="quantity_num">$ {{(menuItem.menu_price*itemQuantity) | number:2}}</h2></div>
+			</div>
+
+		</div>
+	</div>
+</div>
+</ion-pane>
+</ion-view>
+<!-- <ion-view title="{{menuItem.menu_name}}">
+  <ion-content has-header="true" padding="false">
+
+<div style="height:100%" class="bg-royal">
+
+<div class="row stable-bg" style="height:50%">
+  <div class="col col-50 stable">.col.col-50</div>
+  <div class="col col-stablenuItem}}..</div>
+</div>
+
+<div class="row positive-bg" style="height:10%">
+  <div class="col col-75">.col.col-75</div>
+  <div class="col">.col</div>
+</div>
+
+<div class="row royal-bg" style="height:30%">
+  <div class="col">.col</div>
+  <div class="col col-75">.col.col-75</div>
+</div>
+
+
+</div>
+
+<div style="width:100px;height:100%; background-color:red">dfdfds</div>
+
+  
+  </ion-content>
+</ion-view> -->

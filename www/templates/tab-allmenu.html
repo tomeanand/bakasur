@@ -1,0 +1,9 @@
+	<ion-view title="All Menu">
+  <ion-content class="has-header">
+    <ion-list>
+      <ion-item ng-repeat="item in menuItemList" type="item-text-wrap" href="#/tab/menudetailed/{{item.id}}">
+        {{item.menu_name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

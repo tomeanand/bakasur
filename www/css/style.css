@@ -1,0 +1,18 @@
+/* Empty. Add your own CSS if you like */
+.padding-false{padding: 0!important;}
+.margin-false{margin: 0!important;}
+.pd_5{padding: 5px;}
+.pdt_5{padding-top: 5px!important;}
+.pdl{padding-left: 0px!important;}
+.pdt{padding-top: 0px!important;}
+.pd{padding: 0px!important;}
+.pd_top{padding-top: 10px;}
+.img_center{margin-left:auto;margin-right:auto;}
+.full-btn{ border-right-width: 1px; 
+ border-left-width: 1px; 
+border-radius: 2px;margin-top: 0px!important;}
+.quantity_num{text-align: center;color: #FFF; margin-top: 10px}
+
+
+
+
