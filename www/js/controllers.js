@@ -1,4 +1,4 @@
-var bakasurController = angular.module('bakasur.controllers', [])
+var bakasurController = angular.module('bakasur.controllers', ['ionic'])
 
 
 
@@ -56,7 +56,7 @@ bakasurController.controller('HomeController', function($scope, $location) {
 	}
 });
 
-bakasurController.controller('MapController', function ($scope, $ionicLoading) {
+bakasurController.controller('MapController', function($scope, $ionicLoading) {
   function initialize() {
     var mapOptions = {
       center: new google.maps.LatLng(43.07493, -89.381388),
@@ -71,10 +71,11 @@ bakasurController.controller('MapController', function ($scope, $ionicLoading) {
       e.preventDefault();
       return false;
     });
-
     $scope.map = map;
   }
-  google.maps.event.addDomListener(window, 'load', initialize);
+ 
+  
+  google.maps.event.addDomListenerOnce(window, 'mouseover', initialize);
 
   $scope.centerOnMe = function () {
     if (!$scope.map) {
@@ -93,6 +94,23 @@ bakasurController.controller('MapController', function ($scope, $ionicLoading) {
       alert('Unable to get location: ' + error.message);
     });
   };
+
+
+});
+
+bakasurController.controller('FBLoginController',function($scope, $state, $location, OpenFB) {
+
+          $scope.facebookLogin = function () {
+            OpenFB.login('email,read_stream,publish_stream').then(
+                function () {
+                  console.log("Login")
+                    //$location.path('/track');
+                    $state.go("tab.track");
+                },
+                function () {
+                    alert('OpenFB login failed');
+                });
+        };
 });
 
 ;

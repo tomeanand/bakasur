@@ -1,13 +1,11 @@
-// Ionic Starter App
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('bakasur', ['ionic', 'bakasur.controllers', 'bakasur.services', 'ngAnimate'])
+angular.module('bakasur', ['ionic','openfb','bakasur.controllers', 'bakasur.services', 'ngAnimate'])
 
-.run(function($ionicPlatform) {
+//.run(function($ionicPlatform) {
+   .run(function($rootScope, $state, $ionicPlatform, $window, OpenFB) {
+
+    OpenFB.init('1428976647372797');
+    
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -19,6 +17,19 @@ angular.module('bakasur', ['ionic', 'bakasur.controllers', 'bakasur.services', '
       StatusBar.styleDefault();
     }
   });
+
+    $rootScope.$on('$stateChangeStart', function(event, toState) {
+      console.log(toState.name)
+        if (toState.name !== "app.login" && toState.name !== "app.logout" && !$window.sessionStorage['fbtoken']) {
+            //$state.go('tab.menu');
+            //event.preventDefault();
+        }
+    });
+
+    $rootScope.$on('OAuthException', function() {
+        $state.go('tab.track');
+    });
+
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -72,7 +83,7 @@ angular.module('bakasur', ['ionic', 'bakasur.controllers', 'bakasur.services', '
     })
 
     .state('tab.login', {url: '/login',
-      views: {'tab-login': {templateUrl: 'templates/tab-login.html',controller: 'AccountCtrl'}
+      views: {'tab-login': {templateUrl: 'templates/tab-login.html',controller: 'FBLoginController'}
       }
     })
 
