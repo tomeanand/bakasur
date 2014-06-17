@@ -9,7 +9,13 @@
 <div style="height:100%" class="bg-light">
 	<div class="row" style="height:44px"></div>
 	<div class="row light-bg " style="height:48%" >
-	<img class="img_center pd_5 pd_top" ng-src="http://localhost/restaurant/assets/uploads/{{menuItem.menu_image}}">
+
+<ion-slide-box style="width:100%" on-slide-changed="slideHasChanged($index)" show-pager="false">
+  <ion-slide ng-repeat="img in itemImage">
+    <div class="slideImage pd_5 pd_top"><img  ng-src="{{baseUrl}}/assets/uploads/{{img}}"> </div>
+  </ion-slide>
+</ion-slide-box>
+	
 	</div>
 	<!-- <div class="row stable-bg" style="height:8%" >
 
@@ -32,14 +38,14 @@
 	<div class="col col-60 light-bg pd_5 "><p>
 	{{menuItem.menu_description}}<br><br>
 	Good server for {{menuItem.menu_servefor}} persons.<br>
-	<h5 class="{{baseType.c}}">{{baseType.t}}</h5><br>
+	<h5 class="{{baseType.c}}">{{baseType.t}}</h5>{{datatest}}<br>
 	</p>
 	</div>
 		<div class="col col-40 stable-border stable-bg pd_5">
 			<div class="row pdl ">
-				<div class="col col-33 pdl pdt"><button class="button button-stabledark icon-minus" ng-click="addItemQuantity(false)"></button></div>
+				<div class="col col-33 pdl pdt"><button class="button button-small button-stabledark icon-minus" ng-click="addItemQuantity(false)"></button></div>
 				<div class="col col-33 pdl pdt"><h2 class="quantity_num">{{itemQuantity}}</h2></div>
-				<div class="col col-33 pdl pdt"><button class="button button-stabledark icon-plus" ng-click="addItemQuantity(true)"></button></div>
+				<div class="col col-33 pdl pdt"><button class="button button-small button-stabledark icon-plus" ng-click="addItemQuantity(true)"></button></div>
 			</div>
 			<button class="button button-full button-stabledark icon-box-add full-btn" ng-click="addItem()" ng-show="isShowAdd"> Add </button>
 			<button class="button  button-full button-energized icon-remove full-btn" ng-click="removeItem()" ng-show="!isShowAdd"> Remove </button>

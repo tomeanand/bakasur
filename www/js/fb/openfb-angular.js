@@ -78,7 +78,7 @@ angular.module('openfb', [])
                     if (index > 0) {
                         oauthRedirectURL = document.location.href.substring(0, index) + 'oauthcallback.html';
                     } else {
-                        oauthRedirectURL = "http://localhost:9080/oauthCallback.html";
+                        oauthRedirectURL = "oauthCallback.html";
                         //return alert("Can't reliably infer the OAuth redirect URI. Please specify it explicitly in openFB.init()");
                     }
                 }

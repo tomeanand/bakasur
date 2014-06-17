@@ -1,4 +1,4 @@
-var bakasurController = angular.module('bakasur.controllers', ['ionic'])
+var bakasurController = angular.module('bakasur.controllers', ['ionic', 'bakasur.directives'])
 
 
 
@@ -8,6 +8,10 @@ bakasurController.controller('AccountCtrl', function($scope) {
 
 bakasurController.controller('MenuController', function($scope, MenuList) {
   $scope.menuItemList = MenuList.all();
+  $scope.getImage = function(imgString)  {
+    var images = imgString.split(",")
+    return images;
+  }
 });
 
 bakasurController.controller('MenuDetailController', function($scope, $stateParams, MenuList, OrderPlate) {
@@ -18,6 +22,7 @@ bakasurController.controller('MenuDetailController', function($scope, $statePara
   $scope.itemQuantity = (isItem ? OrderPlate.getItemById($scope.menuItem).quantity : 1);
   $scope.isShowAdd = !isItem;
   $scope.baseType = $scope.menuItem.menu_category == 1 ? {c:'positive',t:'Vegetarian'} : {c:'assertive',t:'Non Vegetarian'}
+  $scope.itemImage = $scope.menuItem.menu_image.split(",");
 
   function refreshItemPage()  {
     $scope.isShowAdd = !OrderPlate.isItemPresent($scope.menuItem);
@@ -46,6 +51,9 @@ bakasurController.controller('MenuDetailController', function($scope, $statePara
   	refreshItemPage();
     $scope.itemQuantity = 1;
   }
+  $scope.slideHasChanged = function(index) {
+
+  }
 
 })
 
@@ -55,6 +63,10 @@ bakasurController.controller('HomeController', function($scope, $location) {
 		$location.path('/tab/menu');
 	}
 });
+
+
+
+
 
 bakasurController.controller('MapController', function($scope, $ionicLoading) {
   function initialize() {

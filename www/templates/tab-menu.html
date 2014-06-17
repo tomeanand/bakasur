@@ -17,7 +17,7 @@
        
 
 
-    <img ng-src="http://localhost/restaurant/assets/uploads/{{item.menu_image}}">
+    <img ng-src="{{baseUrl}}assets/uploads/{{getImage(item.menu_image)[0]}}">
     <h2>{{item.menu_name}}</h2>
     <p>For {{item.menu_servefor}} persons</p>
     <h3 class="energized">{{item.menu_price}}</h3>

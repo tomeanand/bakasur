@@ -3,13 +3,15 @@ var bakasurService = angular.module('bakasur.services', ['ngResource']);
 /**
  * A simple example service that returns some data.
  */
-bakasurService.factory('MenuList', function($resource) {
+bakasurService.factory('MenuList', function($resource, $rootScope) {
   // Might use a resource here that returns a JSON array
   // Some fake testing data
   var menuItems = [];
+//console.log($localForage);
+//http://bakasur.mxbit.co.in/index.php/home/show_menulist
+//http://bakasur.mxbit.co.in/index.php/api/menu/all
 
-
-var menu = $resource('http://localhost/restaurant/index.php/home/show_menulist', {}, { getMenu: {method:'GET',isArray:true} });
+var menu = $resource( $rootScope.jsonUrl+'api/menu/all', {}, { getMenu: {method:'GET',isArray:true} });
      var menuList = menu.getMenu(function(){
        
        for(var j=0; j<menuList.length; j++){

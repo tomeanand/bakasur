@@ -2,7 +2,11 @@
 angular.module('bakasur', ['ionic','openfb','bakasur.controllers', 'bakasur.services', 'ngAnimate'])
 
 //.run(function($ionicPlatform) {
-   .run(function($rootScope, $state, $ionicPlatform, $window, OpenFB) {
+   .run(function($rootScope, $state, $ionicPlatform, $location, $window, OpenFB) {
+
+    var path = $location.absUrl();
+    $rootScope.baseUrl = ($location.absUrl().indexOf("localhost/restaurant") > 0 )  ? "http://localhost/restaurant-mobile/" : "http://bakasur.mxbit.co.in/";
+    $rootScope.jsonUrl =  $rootScope.baseUrl + "index.php/";
 
     OpenFB.init('1428976647372797');
     
@@ -19,7 +23,7 @@ angular.module('bakasur', ['ionic','openfb','bakasur.controllers', 'bakasur.serv
   });
 
     $rootScope.$on('$stateChangeStart', function(event, toState) {
-      console.log(toState.name)
+      //console.log(toState.name)
         if (toState.name !== "app.login" && toState.name !== "app.logout" && !$window.sessionStorage['fbtoken']) {
             //$state.go('tab.menu');
             //event.preventDefault();
@@ -38,6 +42,8 @@ angular.module('bakasur', ['ionic','openfb','bakasur.controllers', 'bakasur.serv
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
+
+
   $stateProvider
 
     // setup an abstract state for the tabs directive
