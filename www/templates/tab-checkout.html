@@ -1,0 +1,29 @@
+<ion-view title="{{title}}">
+<ion-content class="has-header padding">
+
+<div class="metro tiles" id="result_page">
+<div class="tile half" ng-repeat="item in checkoutList" >
+<div class="tile-content image">
+<img ng-src="{{baseUrl}}assets/uploads/{{getImage(item.menu_image)[0]}}">  
+</div><div class="brand bottomband">
+<span class="label fg-white">{{item.menu_name}}</span>
+</div></div>
+    
+  </div>
+</div> 
+
+<!--  <ion-list>
+<ion-item ng-repeat="item in checkoutList" class="item-thumbnail-left" type="item-text-wrap" href="#/tab/menudetails/{{item.id}}">
+
+
+
+<img ng-src="{{baseUrl}}assets/uploads/{{getImage(item.menu_image)[0]}}">
+<h2>{{item.menu_name}}</h2>
+<p>For {{item.menu_servefor}} persons</p>
+<h3 class="energized">{{item.menu_price}}</h3>
+</ion-item> -->
+
+
+
+</ion-content>
+</ion-view>

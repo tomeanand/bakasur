@@ -8,11 +8,12 @@
 .pd{padding: 0px!important;}
 .pd_top{padding-top: 10px;}
 .img_center{margin-left:auto;margin-right:auto;}
-.full-btn{ border-right-width: 1px; 
- border-left-width: 1px; 
-border-radius: 2px;margin-top: 0px!important;}
+.full-btn{ border-right-width: 1px; border-left-width: 1px;border-radius: 2px;margin-top: 0px!important;}
 .quantity_num{text-align: center;color: #FFF; margin-top: 10px}
-.slideImage{width:100%;height:auto;text-align:center}
+.slideImage{width:100%;height:100%;text-align:center}
+.white{color:#ffffff;font-size:23px;}
+.addbtn{padding: 0px!important;min-height: 35px;min-width: 56px;font-size: 14px;}
+
 
 
 

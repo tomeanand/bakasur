@@ -1,5 +1,5 @@
 
-angular.module('bakasur', ['ionic','openfb','bakasur.controllers', 'bakasur.services', 'ngAnimate'])
+angular.module('bakasur', ['ionic','openfb','bakasur.controllers', 'bakasur.services', 'ngAnimate', 'wu.masonry'])
 
 //.run(function($ionicPlatform) {
    .run(function($rootScope, $state, $ionicPlatform, $location, $window, OpenFB) {
@@ -84,7 +84,7 @@ angular.module('bakasur', ['ionic','openfb','bakasur.controllers', 'bakasur.serv
     })    
 
     .state('tab.orders', {url: '/orders',
-      views: {'tab-orders': {templateUrl: 'templates/tab-orders.html',controller: 'AccountCtrl'}
+      views: {'tab-orders': {templateUrl: 'templates/tab-orders.html',controller: 'MyOrderController'}
       }
     })
 
@@ -102,6 +102,11 @@ angular.module('bakasur', ['ionic','openfb','bakasur.controllers', 'bakasur.serv
       views: {'tab-contact': {templateUrl: 'templates/tab-contact.html'}
       }
     })
+
+    .state('tab.checkout', {url: '/checkout',
+      views: {'tab-menu': {templateUrl: 'templates/tab-checkout.html',controller:'CheckoutController'}
+      }
+    })  
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/home');

@@ -14,7 +14,7 @@ bakasurController.controller('MenuController', function($scope, MenuList) {
   }
 });
 
-bakasurController.controller('MenuDetailController', function($scope, $stateParams, MenuList, OrderPlate) {
+bakasurController.controller('MenuDetailController', function($scope, $stateParams,$state,  MenuList, OrderPlate) {
 	
 
   $scope.menuItem = MenuList.get($stateParams.menuId);
@@ -51,8 +51,12 @@ bakasurController.controller('MenuDetailController', function($scope, $statePara
   	refreshItemPage();
     $scope.itemQuantity = 1;
   }
+  $scope.doCheckout = function()  {
+    console.log(OrderPlate.isEmpty())
+       !OrderPlate.isEmpty() ? $state.go('tab.checkout') : alert("Nothing")
+  }
   $scope.slideHasChanged = function(index) {
-
+    
   }
 
 })
@@ -124,5 +128,20 @@ bakasurController.controller('FBLoginController',function($scope, $state, $locat
                 });
         };
 });
+
+bakasurController.controller('MyOrderController',function($scope, $state, $location, OrderPlate) {
+  
+  $scope.title = "My Orders";
+});
+bakasurController.controller('CheckoutController',function($scope, $state, $location, OrderPlate) {
+   $scope.getImage = function(imgString)  {
+    var images = imgString.split(",")
+    return images;
+  }
+  
+  $scope.title = "Checkout";
+  $scope.checkoutList = OrderPlate.getOrder();
+});
+
 
 ;
