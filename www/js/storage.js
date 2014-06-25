@@ -6,7 +6,7 @@ bakasurStorage.config(['$localForageProvider',function($localForageProvider)	{
         name        : 'bakasur', // name of the database and prefix for your data
         version     : 1.0, // version of the database, you shouldn't have to use this
         storeName   : 'menulist', // name of the table
-        description : 'Saving data and images for menulist'
+        description : 'Saving data for menulist'
     });
 
 }]);
