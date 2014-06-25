@@ -1,5 +1,5 @@
 
-angular.module('bakasur', ['ionic','openfb','bakasur.controllers', 'bakasur.services', 'ngAnimate', 'wu.masonry'])
+angular.module('bakasur', ['ionic','openfb','bakasur.controllers', 'bakasur.services', 'ngAnimate', 'bakasur.storage'])
 
 //.run(function($ionicPlatform) {
    .run(function($rootScope, $state, $ionicPlatform, $location, $window, OpenFB) {

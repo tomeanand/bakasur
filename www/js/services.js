@@ -1,10 +1,10 @@
-var bakasurService = angular.module('bakasur.services', ['ngResource']);
+var bakasurService = angular.module('bakasur.services', ['ngResource','bakasur.storage']);
 
 /**
  * A simple example service that returns some data.
  */
  
-bakasurService.factory('MenuList', function($resource, $rootScope) {
+bakasurService.factory('MenuList', function($resource, $rootScope,$localForage) {
   // Might use a resource here that returns a JSON array
   // Some fake testing data
  
@@ -13,8 +13,16 @@ bakasurService.factory('MenuList', function($resource, $rootScope) {
 //console.log($localForage);
 //http://bakasur.mxbit.co.in/index.php/home/show_menulist
 //http://bakasur.mxbit.co.in/index.php/api/menu/all
+
+ $localForage.get('itemlist').then(function(data) {
+  if(data)  {console.log("Present")}
+      else  {console.log("Not Present");}
+  
+ });
+
 var resourceUrl = $rootScope.jsonUrl+'api/menu/all';
-console.log(resourceUrl)
+
+
 var menu = $resource( resourceUrl, {}, { getMenu: {method:'GET',isArray:true} });
      var menuList = menu.getMenu(function(){
        
@@ -25,6 +33,12 @@ var menu = $resource( resourceUrl, {}, { getMenu: {method:'GET',isArray:true} })
        }
        })
 
+    $localForage.setItem('itemlist',menuItems).then(function() {
+         $localForage.get('itemlist').then(function(data) {
+           console.log(data)
+        });
+    });
+
 
   return {
     all: function() {
@@ -32,7 +46,9 @@ var menu = $resource( resourceUrl, {}, { getMenu: {method:'GET',isArray:true} })
     },
     get: function(menuId) {
       // Simple index lookup
-      return menuItems[menuId];
+      var item = menuItems[menuId];
+      item.index = menuId;
+      return item;
     }
   }
 });
@@ -40,7 +56,8 @@ var menu = $resource( resourceUrl, {}, { getMenu: {method:'GET',isArray:true} })
 bakasurService.factory('OrderPlate', function() {
   var orderData = new Object();
 
-  function getDateItems(item) {
+  function getItemData(item) {
+
   var newItem = new Object();
       newItem = {
       id: item.menu_id,
@@ -54,7 +71,9 @@ bakasurService.factory('OrderPlate', function() {
        menu_price: item.menu_price,
        menu_servefor: item.menu_servefor,
        menu_subcategory: item.menu_subcategory,
-       quantity: item.quantity
+       quantity: item.quantity,
+       item_index: item.index
+
   };
   delete item;
   return newItem;
@@ -62,7 +81,7 @@ bakasurService.factory('OrderPlate', function() {
 
   return  {
    addItem:function(item)  {
-    var newItem = getDateItems(item); delete item;
+    var newItem = getItemData(item); delete item;
     orderData[''+newItem.menu_id+''] = newItem;
   },
   removeItem:function(item)  {
@@ -86,6 +105,13 @@ bakasurService.factory('OrderPlate', function() {
   },
   isEmpty:function()  {
     return (orderData.length == 0 ? true : false);
+  },
+  getTotal:function() {
+    var total = 0;
+    for(var i in orderData) {
+        total +=  (orderData[i].menu_price * orderData[i].quantity);
+    }
+    return total;
   }
 }
 });

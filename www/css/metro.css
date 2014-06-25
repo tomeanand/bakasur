@@ -56,7 +56,7 @@
   margin: 0 10px 10px 0;
 }
 .metro .tile.half {
-  width: 100px;
+  width: 150px;
   height: 100px;
 }
 .metro .tile.double {
@@ -185,7 +185,7 @@
 .metro .tile .brand .text,
 .metro .tile .tile-status .text {
   display: block;
-  font-size: 10pt;
+  font-size: 12pt;
   margin: 5px 20px 2px 5px;
   background: transparent;
   color: #ffffff;
@@ -209,7 +209,7 @@
   margin: 0;
   vertical-align: middle !important;
   display: block;
-  font-size: 10pt;
+  font-size: 14pt;
 }
 .metro .tile .brand .badge.activity,
 .metro .tile .tile-status .badge.activity {
@@ -289,10 +289,10 @@
   margin-left: -18.66666667px;
 }
 .metro .tile {
-  /*font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;*/
+  font-family: "roboto_condensedregular", sans-serif;
 }
 .metro .tile * {
-  /*font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;*/
+  font-family: "roboto_condensedregular", sans-serif;  
 }
 .metro .tile.scale {
   -webkit-transform: scale(0.98);

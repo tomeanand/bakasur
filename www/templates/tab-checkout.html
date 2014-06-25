@@ -1,29 +1,49 @@
-<ion-view title="{{title}}">
-<ion-content class="has-header padding">
+<ion-view title="{{title}} ">
+<div class="f-height-full">
+  <div class="f-height-85 has-header">
+   <ion-content class="has-header padding has-footer">
+   
+   <div class="metro tiles" id="result_page">
+   <div class="tile half" ng-repeat="item in checkoutList" >
+<div class="badge pricetag">${{ (item.menu_price * item.quantity) | number:2}}</div>
+<div class="tile-content image boxItem">
 
-<div class="metro tiles" id="result_page">
-<div class="tile half" ng-repeat="item in checkoutList" >
-<div class="tile-content image">
-<img ng-src="{{baseUrl}}assets/uploads/{{getImage(item.menu_image)[0]}}">  
-</div><div class="brand bottomband">
+<a href="#/tab/menudetails/{{item.item_index}}"><img ng-src="{{baseUrl}}assets/uploads/{{getImage(item.menu_image)[0]}}" >  </a>
+</div>
+
+<div class="brand bottomband">
 <span class="label fg-white">{{item.menu_name}}</span>
-</div></div>
-    
+</div>
+</div>
+
+</div>
+</ion-content>
+</div>
+
+   
   </div>
+  <div class="f-height-15" style="margin-top:-95px;">
+    <div class="button-bar bar-balanced">
+  <a class="button icon-mail"> Text it</a>
+  <a class="button enable-color" ng-disabled="true" >$ {{total | number:2}}</a>
+  <a class="button icon-credit-card"> Pay now</a>
+
+</div>
+  </div>
+</div>
+<!-- <ion-content class="has-header padding has-footer">
+
+
+<
 </div> 
 
-<!--  <ion-list>
-<ion-item ng-repeat="item in checkoutList" class="item-thumbnail-left" type="item-text-wrap" href="#/tab/menudetails/{{item.id}}">
+
+<div class="bar bar-footer bar-balanced">
+  <div class="title">Footer</div>
+</div>
+
+</ion-content> -->
 
 
 
-<img ng-src="{{baseUrl}}assets/uploads/{{getImage(item.menu_image)[0]}}">
-<h2>{{item.menu_name}}</h2>
-<p>For {{item.menu_servefor}} persons</p>
-<h3 class="energized">{{item.menu_price}}</h3>
-</ion-item> -->
-
-
-
-</ion-content>
 </ion-view>

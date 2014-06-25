@@ -40,6 +40,7 @@ bakasurController.controller('MenuDetailController', function($scope, $statePara
   }
 
   $scope.addItem = function()	{
+    console.log($scope.menuItem.index);
     $scope.menuItem.quantity = $scope.itemQuantity;
   	OrderPlate.addItem($scope.menuItem);
   	refreshItemPage()
@@ -141,6 +142,7 @@ bakasurController.controller('CheckoutController',function($scope, $state, $loca
   
   $scope.title = "Checkout";
   $scope.checkoutList = OrderPlate.getOrder();
+  $scope.total = OrderPlate.getTotal();
 });
 
 
